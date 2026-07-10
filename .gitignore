@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Secrets
+service-account.json
+
+# Local Node & Database
+node_modules/
+.local/
+members_db.json
+*.zip

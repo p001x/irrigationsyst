@@ -1,0 +1,2 @@
+- [ES6 module architecture](module-architecture.md) — cross-module calls use window.xxx(); main.js assigns all exports to window on load.
+- [GeoTIFF worker clone rule](geotiff-worker.md) — typed arrays must be .slice()'d before postMessage transfer to preserve state.band* for repeat runs.
