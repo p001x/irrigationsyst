@@ -17,3 +17,11 @@ node_modules/
 .local/
 members_db.json
 *.zip
+
+service-account.json
+
+node_modules/
+
+service-account.json
+
+node_modules/
