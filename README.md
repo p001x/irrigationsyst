@@ -54,8 +54,9 @@ AgriAdapt integrates four decades of global satellite observations harmonized on
 | **MODIS Terra/Aqua** (NASA) | `NDVI_D6`, `VCI_D6`, `LST_D6`, `LST_ANOM` | 250m–1km / 8–16 Day Composites | Mid-season Vegetation Condition Index and Land Surface Temperature thermal stress anomaly. |
 | **TerraClimate** (IDAHO) | `AET_SEASON`, `PET_SEASON`, `EOS_WRSI` | 1/24° (~4 km) / Monthly | Actual and Potential Evapotranspiration, Water Requirement Satisfaction Index. |
 | **NISR SAS 2024** | Yields, area harvested, crop share | Sector / District Level Sample | Empirical ground truth: Rainfed (1.85 t/ha) vs. Irrigated (4.85 t/ha) maize production. |
+| **NISR EICV7 Microdata** | `s4bq10`, `s4bq23c`, `s5cq8`, `s5cq13`, `poverty` | 486 Surveyed Households (54 Clusters, Kirehe) | Ingested into Tab 3 Microdata Explorer: 79% basic feature phone reliance, 49.8% water shortages. |
 | **NISR Census 2022** | Population, household counts, sex ratio | Administrative Sector Level | 460,860 citizens; 84,120 agricultural households across all 12 sectors of Kirehe. |
-| **NISR RAHS 2024** | Ag inputs, credit access, co-op ledgers | Household Representative Sample | Cooperative membership, water user fees (25,000 RWF/ha), and credit recovery baselines. |
+| **NISR RAHS 2024** | Ag inputs, credit access, co-op ledgers | Household Representative Sample | Landholding fragmentation (mean 0.65 ha) and cooperative credit recovery baselines. |
 
 ### 2.2 Mathematical Definition of Predictive Features
 To prevent geographic and seasonal biases, all hydro-meteorological indicators undergo temporal normalization against the 23-season historical climatology (2001–2023):
@@ -189,32 +190,33 @@ The platform is designed to serve both high-level district agronomists and grass
 +--------------------------------------------------------------------------------------------------+
 |                               AGRIADAPT 4-TAB NAVIGATION ARCHITECTURE                             |
 +--------------------------------------------------------------------------------------------------+
-|  [Tab 1: Early Warning]    [Tab 2: Last-Mile Action]   [Tab 3: Infrastructure]   [Tab 4: ML Rigor]|
-|  * Geospatial Leaflet Map  * USSD / SMS Simulator     * Nasho 63 Pivot Ledger   * LOYO-CV Metrics|
-|  * Real District Boundary  * Kinyarwanda Dispatch     * Cooperative Financials  * TreeSHAP Chart |
-|  * 12 Sector Rankings      * Action Timeline Matrix   * Return on Investment    * Zero Leakage   |
+|  [Tab 1: Early Warning]    [Tab 2: Infrastructure]    [Tab 3: Farmer ROI]        [Tab 4: Rigor]  |
+|  * Real District Boundary  * 63 Center Pivots         * SAS 2024 Macro Impact    * LOYO-CV Model |
+|  * 1-Click Scenarios       * 3.3 MW Solar Plant       * EICV7 Microdata Explorer * TreeSHAP XAI  |
+|  * 12 Sector Risk Tiers    * Lake Cyambwe Intake      * Grassroots 2G SMS Hub    * Open Downloads|
 +--------------------------------------------------------------------------------------------------+
 ```
 
-### 5.1 Tab 1: Early Warning Hub (Geospatial Risk & Sector Vulnerability)
+### 5.1 Tab 1: Early Warning Hub (Geospatial Risk, Boundaries & Scenarios)
 * **Real Administrative Boundary:** Powered by `data/kirehe_district_real_boundary.geojson`, rendering the true, curved polygon boundary of Kirehe District ($1,184.85 \text{ km}^2$) without geometric clipping or simplified bounding box artifacts.
-* **Interactive Risk Tiers:** Real-time color-coded choropleth highlighting high-vulnerability corridors (Mahama, Mpanga, Nyarubuye, Nyamugari) versus buffer-protected sectors (Nasho, Gatore).
+* **1-Click Historical Scenario Benchmarks:** Instant scenario loader simulating four verified historical seasons (*2024 Baseline Normal, 2016 Severe Drought, 2004 Desiccation Crisis, 2020 Bumper Harvest*) to demonstrate model dynamics without manual slider tuning.
 * **Multi-Sensor Layers:** Toggle between Root-Zone Soil Moisture, Rainfall Anomalies, Land Surface Temperature, and Predicted Drought Probability.
 
-### 5.2 Tab 2: Last-Mile Action (USSD / SMS Simulator & Water Scheduling)
-* **Kinyarwanda USSD/SMS Engine:** Full interactive simulator replicating mobile phone prompts (*712#) and localized text dispatches sent to non-smartphone smallholders via the National Early Warning SMS Gateway:
-  > *"AgriAdapt Kirehe: Mu murenge wa MPANGA hateganyijwe amapfa yo hagati mu gihembwe B (Ikigero cya 68%). Fata ingamba zo gusasira imyaka, gukoresha amazi neza, no gutera ifumbire yongera ubuhehere."*
-* **Dynamic Agronomic Protocols:** Prescribes verified actions 45 days before harvest: mulching, water rationing, drought-tolerant crop switching, and localized micro-drip deployment.
+### 5.2 Tab 2: Nasho Infrastructure & Center-Pivot Network
+* **63 Solar-Powered Center Pivots:** Spatial mapping and hydraulic rationing across the 1,173-hectare Nasho scheme, powered by a 3.3 MW solar plant at Lake Cyambwe.
+* **Zero-Diesel Energy Architecture:** Pumping operates at zero diesel fuel expenditure, providing baseline resilience against fuel market volatility.
+* **Variable-Rate Irrigation Scheduling:** Prescribes dekadal irrigation quotas based on mid-season moisture deficits to prevent over-abstraction.
 
-### 5.3 Tab 3: Infrastructure Hub & Cooperative Impact
-* **Nasho Center-Pivot Registry:** Real-time monitoring of all 63 solar-powered center pivots, covering water discharge rates ($m^3/\text{hr}$), pressure status, and connected cooperative member plots.
-* **Member Ledger with 1-Click Dispatch:** Comprehensive membership ledger across all 12 Kirehe sectors enabling cooperative managers to inspect member acreage, seasonal fee status, and trigger targeted SMS alerts directly from the ledger.
-* **Financial Model & ROI:** Comprehensive cash-flow analysis detailing smallholder margin growth, solar power operational savings, and cooperative water fee sustainability (25,000 RWF/ha).
+### 5.3 Tab 3: Farmer ROI & Impact (EICV7 Microdata Explorer & Grassroots SMS)
+* **Macroeconomic Yield Benchmark (SAS 2024):** Compares status-quo rainfed yields (1.85 t/ha, 420,000 RWF/ha margin) against solar center-pivot yields (4.85 t/ha, 1,280,000 RWF/ha margin, +162% gain).
+* **NISR EICV7 Microdata Query Explorer:** Direct, interactive query interface for the **486 real surveyed households across 54 clusters in Kirehe District**, filterable by water shortage history (`s5cq8`), basic 2G phone reliance (`s4bq10`), and welfare quintiles.
+* **Grassroots 2G SMS Gateway (Kinyarwanda):** Sector-specific early-warning broadcasts in authentic Kinyarwanda covering all 12 sectors, empirically justified by EICV7 data showing 79% basic feature phone reliance.
 
-### 5.4 Tab 4: ML Rigor & Methodological Validation
-* **Transparent Out-of-Sample Metrics:** Complete breakdown of the 23-season LOYO-CV validation pipeline.
+### 5.4 Tab 4: Scientific Validation & Open Microdata Downloads
+* **Transparent LOYO-CV Validation:** 23-season out-of-sample evaluation (AUC: 0.8532, Sensitivity: 82.4%, Specificity: 87.2%).
 * **Feature Attribution Visualizer:** Interactive TreeSHAP chart displaying exact contributions of root-zone moisture anomalies and heat stress indicators.
-* **NISR Benchmark Verification:** Direct side-by-side data comparison between predicted values and official SAS 2024 / RAHS 2024 / Census 2022 survey data.
+* **Direct Microdata Verification Center (Slide 12):** 1-click download links for the Kirehe GeoJSON boundary, 12-sector baselines, EICV7 surveyed households CSV sample (486 records), and the 500m satellite grid CSV.
+* **Low-Bandwidth Mode:** Topbar `[⚡ Data Saver]` toggle pausing heavy video backgrounds for field officers in low-connectivity areas.
 
 ### 5.5 Visual Demonstration Walkthrough (NISR Slide 12 Requirement)
 * **Demo Video File:** [`demo/demo.gif`](./demo/demo.gif) (and [`demo/demo.webp`](./demo/demo.webp))
