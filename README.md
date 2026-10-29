@@ -7,7 +7,8 @@
 [![ML Model Validation](https://img.shields.io/badge/LOYO--CV%20AUC--ROC-0.853-success.svg)](./run_pipeline.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **Live Production URL:** [https://p001x.github.io/irrigationsyst/](https://p001x.github.io/irrigationsyst/)  
+> **Live Production URL (Global Cloudflare CDN):** [https://psychiatry-architecture-findings-iso.trycloudflare.com](https://psychiatry-architecture-findings-iso.trycloudflare.com)  
+> **GitHub Pages Mirror:** [https://p001x.github.io/irrigationsyst/](https://p001x.github.io/irrigationsyst/)  
 > **Sample Admin Credentials (Slide 11):** Password `admin` or `kirehe2026` (unlocks Agronomist Ledger editing)  
 > **Target Jurisdiction:** Kirehe District, Eastern Province, Rwanda (12 Administrative Sectors | 460,860 Citizens | 84,120 Agricultural Households)  
 > **Primary National Framework:** National Strategy for Transformation (NST2, 2024–2029) & Vision 2050  
