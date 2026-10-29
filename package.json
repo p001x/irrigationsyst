@@ -1,27 +1,15 @@
 {
   "name": "agriadapt",
   "version": "1.0.0",
-  "description": "",
-  "main": "check.js",
+  "description": "AgriAdapt - Mid-Season ML Early Warning & Solar-Powered Climate Adaptation Hub",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "python -m http.server 8080"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peterson1223/projectAGRIADAPT.git"
+    "url": "git+https://github.com/p001x/irrigationsyst.git"
   },
-  "keywords": [],
+  "keywords": ["agriadapt", "nisr", "kirehe", "climate-adaptation"],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/peterson1223/projectAGRIADAPT/issues"
-  },
-  "homepage": "https://github.com/peterson1223/projectAGRIADAPT#readme",
-  "dependencies": {
-    "@google/earthengine": "^1.7.34",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "pg": "^8.22.0"
-  }
+  "license": "MIT"
 }
