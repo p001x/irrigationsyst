@@ -23,10 +23,11 @@ export function renderExportHub() {
     div.className = 'inner-glass';
     div.style.cssText = 'padding:20px;border-left:4px solid var(--cyan);';
     const hasSat = m.ndvi !== 0.45;
+    const mLabel = m.name || `HH #${m.hhid || m.id}`;
     div.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:start;">
         <div>
-          <div style="font-size:16px;font-weight:900;">${m.name}</div>
+          <div style="font-size:16px;font-weight:900;">${mLabel}</div>
           <div style="font-size:10px;color:var(--ink-soft);text-transform:uppercase;">${m.sector || 'Kirehe'} · ${m.crop}</div>
         </div>
         <div style="font-size:12px;font-family:var(--mono);color:var(--cyan);">${m.ha} ha</div>
@@ -42,7 +43,7 @@ export function renderExportHub() {
         </div>
       </div>
       <button class="btn btn-mini" style="width:100%;margin-top:20px;background:var(--green);color:#000;border:none;font-weight:800;"
-              onclick="generateIndividualReport('${m.id}')" aria-label="Export analysis report for ${m.name}">
+              onclick="generateIndividualReport('${m.id}')" aria-label="Export analysis report for ${mLabel}">
         <i class="fa-solid fa-file-export" aria-hidden="true"></i> Export Analysis Report
       </button>`;
     grid.appendChild(div);
@@ -104,7 +105,8 @@ export function renderAnalysisHub() {
   }
 
   const filtered = state.GLOBAL_MEMBERS.filter(m => {
-    if (!m.name.toLowerCase().includes(search))              return false;
+    const mName = (m.name || `HH #${m.hhid || m.id}`).toLowerCase();
+    if (!mName.includes(search))                             return false;
     if (filterSector !== 'all' && m.sector !== filterSector) return false;
     const mW = Math.min(100, Math.round(optWRSI / (CROP_DATA[m.crop] || CROP_DATA.Maize).weight));
     if (filterRisk === 'high' && mW < 80)                    return false;
@@ -174,13 +176,14 @@ export function renderAnalysisHub() {
       return `<div class="spark-bar ${k < dekad ? 'opt-fill' : ''}" style="height:${h}px;background:${k < dekad ? riskColor : 'rgba(255,255,255,0.05)'};box-shadow:${cur ? '0 0 15px ' + riskColor : 'none'};opacity:${k < dekad ? '1' : '0.3'};${cur ? 'border:1px solid white;' : ''}"></div>`;
     }).join('');
 
+    const mName = m.name || `HH #${m.hhid || m.id}`;
     return `
-      <div class="inner-glass analysis-card" role="article" aria-label="${m.name} field report"
+      <div class="inner-glass analysis-card" role="article" aria-label="${mName} field report"
            style="padding:28px;border-top:4px solid ${riskColor};display:flex;flex-direction:column;justify-content:space-between;overflow:visible;height:100%;min-height:420px;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
             <div style="font-size:10px;color:var(--cyan);font-family:var(--mono);text-transform:uppercase;font-weight:700;margin-bottom:4px;">${m.id}</div>
-            <div style="font-size:20px;font-weight:900;line-height:1.2;color:var(--ink);">${m.name}</div>
+            <div style="font-size:20px;font-weight:900;line-height:1.2;color:var(--ink);">${mName}</div>
             <div style="font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.05em;margin-top:4px;">
               <i class="fa-solid fa-location-dot" aria-hidden="true" style="opacity:0.6;"></i> ${m.sector}
               <span style="margin:0 4px;opacity:0.3;">|</span>
@@ -218,11 +221,11 @@ export function renderAnalysisHub() {
           <span style="font-size:12px;color:var(--ink-soft);font-family:var(--serif);line-height:1.5;">${_memberInsight(m, mOptWrsi, dekad, i)}</span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px;">
-          <button class="btn-mini" onclick="generateIndividualReport('${m.id}')" aria-label="Download PDF for ${m.name}"
+          <button class="btn-mini" onclick="generateIndividualReport('${m.id}')" aria-label="Download PDF for ${mName}"
                   style="background:var(--paper);border:1px solid var(--border);color:var(--ink-soft);width:100%;padding:10px;">
             <i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Download PDF
           </button>
-          <button class="btn-mini" onclick="generateIndividualReport('${m.id}')" aria-label="Print field report for ${m.name}"
+          <button class="btn-mini" onclick="generateIndividualReport('${m.id}')" aria-label="Print field report for ${mName}"
                   style="background:var(--cyan-pale);color:var(--cyan);border-color:var(--cyan);width:100%;padding:10px;">
             <i class="fa-solid fa-print" aria-hidden="true"></i> Field Report
           </button>
@@ -258,8 +261,9 @@ function _memberInsight(m, wrsi, dekad, inp) {
   const yieldT   = parseFloat((m.ha * cropDef.yield * sectProf.fert * (wrsi / 100)).toFixed(2));
   const incomeK  = Math.round(yieldT * MARKET_PRICE_RWF_T / 1000);
 
+  const displayName = m.name || `HH #${m.hhid || m.id}`;
   if (dekad >= 10) {
-    return `<strong>Harvest Window:</strong> ${m.name.split(' ')[0]}'s ${m.ha} ha ${m.crop} in ${m.sector} — WRSI ${wrsi}%, ${ndviLabel} (NDVI ${ndvi.toFixed(3)}), SPI ${spi.toFixed(2)} (${spiLabel}). Projected yield ≈ ${yieldT} t — est. income <strong>${incomeK.toLocaleString()} K RWF</strong>.`;
+    return `<strong>Harvest Window:</strong> ${displayName.split(' ')[0]}'s ${m.ha} ha ${m.crop} in ${m.sector} — WRSI ${wrsi}%, ${ndviLabel} (NDVI ${ndvi.toFixed(3)}), SPI ${spi.toFixed(2)} (${spiLabel}). Projected yield ≈ ${yieldT} t — est. income <strong>${incomeK.toLocaleString()} K RWF</strong>.`;
   }
   if (wrsi < 70) {
     return `<strong>Critical — Water Deficit:</strong> WRSI ${wrsi}% on ${m.ha} ha ${m.crop}, ${m.sector}. Live spectral: RF_CUMUL ${rf} mm, ${cddNote}, SM_D8 ${sm.toFixed(2)} (${smLabel}), NDVI ${ndvi.toFixed(3)}. Daily solar-pivot irrigation required. Projected income: <strong>${incomeK.toLocaleString()} K RWF</strong>.`;

@@ -38,7 +38,10 @@ export function getIrrigationPlan(wrsi, crop) {
 }
 
 export function _seedMembers() {
-  state.GLOBAL_MEMBERS = JSON.parse(JSON.stringify(EICV7_ALL_HOUSEHOLDS));
+  state.GLOBAL_MEMBERS = JSON.parse(JSON.stringify(EICV7_ALL_HOUSEHOLDS)).map(m => ({
+    ...m,
+    name: m.name || `HH #${m.hhid} (${m.head_sex || 'Head'}, ${m.head_age || 40}y)`,
+  }));
 }
 
 export function _ensureMembers() {
