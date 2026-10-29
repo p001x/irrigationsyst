@@ -105,3 +105,4 @@ TOTAL DURATION: 2 Minutes 45 Seconds (15-second buffer under the 3-minute hard c
 * [x] Covers Problem, Solution, Live Demo, ML Rigor, and Socioeconomic Impact.
 * [x] Demonstrates live working interface at `https://p001x.github.io/irrigationsyst/`.
 * [x] Directly references NISR datasets (SAS 2024, RAHS 2024, Census 2022) and NST2 policy targets.
+

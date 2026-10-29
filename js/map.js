@@ -150,6 +150,27 @@ export function initLeafletMap() {
     });
   }
 
-  const kireheBounds = [[-2.45,30.45],[-2.35,30.85],[-2.15,30.95],[-2.05,30.65],[-2.15,30.45]];
-  L.polygon(kireheBounds, { color: 'var(--cyan)', weight: 1, fillOpacity: 0.1 }).addTo(state.map);
+  // Load official real administrative boundary of Kirehe District
+  fetch('data/kirehe_district_real_boundary.geojson')
+    .then(r => {
+      if (!r.ok) throw new Error('Network error');
+      return r.json();
+    })
+    .then(geo => {
+      const bLayer = L.geoJSON(geo, {
+        style: {
+          color: '#00F0FF',
+          weight: 2,
+          opacity: 0.8,
+          fillColor: '#00F0FF',
+          fillOpacity: 0.08,
+          dashArray: '3, 4'
+        }
+      }).addTo(state.map);
+      state.map.fitBounds(bLayer.getBounds());
+    })
+    .catch(() => {
+      const kireheBounds = [[-2.45,30.45],[-2.35,30.85],[-2.15,30.95],[-2.05,30.65],[-2.15,30.45]];
+      L.polygon(kireheBounds, { color: 'var(--cyan)', weight: 1, fillOpacity: 0.1 }).addTo(state.map);
+    });
 }

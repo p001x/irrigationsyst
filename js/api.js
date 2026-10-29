@@ -28,7 +28,7 @@ export async function adminLogin(password) {
 
 export async function adminLogout() {
   sessionStorage.removeItem('agriadapt_admin');
-  try { await fetch('/api/admin/logout', { method: 'POST' }); } catch (e) {}
+  try { await fetch('/api/admin/logout', { method: 'POST' }); } catch (e) { }
 }
 
 export async function adminStatus() {
@@ -39,7 +39,7 @@ export async function adminStatus() {
       const data = await res.json();
       return data.admin === true;
     }
-  } catch (e) {}
+  } catch (e) { }
   return false;
 }
 
@@ -70,29 +70,29 @@ export async function fetchFinance(baseWRSI, optWRSI, members, inputs) {
   KIREHE_SECTORS.forEach(s => { sectorStats[s.n] = 0; });
 
   const updatedMembers = members.map(m => {
-    const crop    = CROP_DATA[m.crop] || CROP_DATA.Maize;
-    const sProf   = KIREHE_SECTORS.find(s => s.n === m.sector) || { fert: 1.0 };
-    const mBase   = Math.min(100, Math.round(baseWRSI / crop.weight));
-    const mOpt    = Math.min(100, Math.round(optWRSI  / crop.weight));
+    const crop = CROP_DATA[m.crop] || CROP_DATA.Maize;
+    const sProf = KIREHE_SECTORS.find(s => s.n === m.sector) || { fert: 1.0 };
+    const mBase = Math.min(100, Math.round(baseWRSI / crop.weight));
+    const mOpt = Math.min(100, Math.round(optWRSI / crop.weight));
     const potTons = m.ha * crop.yield * sProf.fert;
     const baseRev = potTons * (mBase / 100) * MARKET_PRICE_RWF_T;
-    const optRev  = potTons * (mOpt  / 100) * MARKET_PRICE_RWF_T;
-    baseRevenue     += baseRev;
+    const optRev = potTons * (mOpt / 100) * MARKET_PRICE_RWF_T;
+    baseRevenue += baseRev;
     seasonalRevenue += optRev;
-    totalHa         += parseFloat(m.ha);
+    totalHa += parseFloat(m.ha);
     sectorStats[m.sector] = (sectorStats[m.sector] || 0) + optRev;
     if (mOpt > 80) optimalCount++;
     return { ...m, wrsi: mOpt, yield_rwf: optRev };
   });
 
-  const totalTons   = Math.round(totalHa * 4.2 * (optWRSI / 100));
-  const inp         = inputs || {};
-  const solarCost   = Math.round(((inp.solar_mw     || 0) / 3.3) * 450_000);
-  const pivotCost   = Math.round(((inp.pivots_active || 0) / TOTAL_PIVOTS) * 620_000);
+  const totalTons = Math.round(totalHa * 4.2 * (optWRSI / 100));
+  const inp = inputs || {};
+  const solarCost = Math.round(((inp.solar_mw || 0) / 3.3) * 450_000);
+  const pivotCost = Math.round(((inp.pivots_active || 0) / TOTAL_PIVOTS) * 620_000);
   const batteryCost = 280_000;
-  const totalOpEx   = solarCost + batteryCost + pivotCost;
-  const netProfit   = seasonalRevenue - totalOpEx;
-  const perHH       = members.length ? Math.round(netProfit / members.length) : 0;
+  const totalOpEx = solarCost + batteryCost + pivotCost;
+  const netProfit = seasonalRevenue - totalOpEx;
+  const perHH = members.length ? Math.round(netProfit / members.length) : 0;
 
   return {
     seasonalRevenue, baseRevenue, totalTons, solarCost, batteryCost,
@@ -103,18 +103,18 @@ export async function fetchFinance(baseWRSI, optWRSI, members, inputs) {
 
 // ── Pre-compiled 12-Sector GEE Remote Sensing Ground Truth ────────────────────
 const KIREHE_GEE_SECTORS_DATA = {
-  Nasho:     { ndvi: 0.524, ndwi: 0.185, spi: 0.142, rain: 298.5, lst: 23.8, lstAnomaly: -0.20 },
-  Mpanga:    { ndvi: 0.381, ndwi: -0.042, spi: -0.854, rain: 223.5, lst: 26.2, lstAnomaly: 2.20 },
-  Gahara:    { ndvi: 0.442, ndwi: 0.058, spi: -0.280, rain: 265.0, lst: 24.5, lstAnomaly: 0.50 },
-  Gatore:    { ndvi: 0.488, ndwi: 0.136, spi: 0.080, rain: 290.8, lst: 23.6, lstAnomaly: -0.40 },
-  Kigarama:  { ndvi: 0.425, ndwi: 0.024, spi: -0.450, rain: 252.6, lst: 25.1, lstAnomaly: 1.10 },
-  Kigina:    { ndvi: 0.461, ndwi: 0.095, spi: -0.150, rain: 274.2, lst: 24.2, lstAnomaly: 0.20 },
-  Mahama:    { ndvi: 0.342, ndwi: -0.118, spi: -1.140, rain: 202.8, lst: 27.1, lstAnomaly: 3.10 },
-  Musaza:    { ndvi: 0.432, ndwi: 0.038, spi: -0.320, rain: 262.0, lst: 24.8, lstAnomaly: 0.80 },
+  Nasho: { ndvi: 0.524, ndwi: 0.185, spi: 0.142, rain: 298.5, lst: 23.8, lstAnomaly: -0.20 },
+  Mpanga: { ndvi: 0.381, ndwi: -0.042, spi: -0.854, rain: 223.5, lst: 26.2, lstAnomaly: 2.20 },
+  Gahara: { ndvi: 0.442, ndwi: 0.058, spi: -0.280, rain: 265.0, lst: 24.5, lstAnomaly: 0.50 },
+  Gatore: { ndvi: 0.488, ndwi: 0.136, spi: 0.080, rain: 290.8, lst: 23.6, lstAnomaly: -0.40 },
+  Kigarama: { ndvi: 0.425, ndwi: 0.024, spi: -0.450, rain: 252.6, lst: 25.1, lstAnomaly: 1.10 },
+  Kigina: { ndvi: 0.461, ndwi: 0.095, spi: -0.150, rain: 274.2, lst: 24.2, lstAnomaly: 0.20 },
+  Mahama: { ndvi: 0.342, ndwi: -0.118, spi: -1.140, rain: 202.8, lst: 27.1, lstAnomaly: 3.10 },
+  Musaza: { ndvi: 0.432, ndwi: 0.038, spi: -0.320, rain: 262.0, lst: 24.8, lstAnomaly: 0.80 },
   Mushikiri: { ndvi: 0.541, ndwi: 0.212, spi: 0.350, rain: 310.4, lst: 23.1, lstAnomaly: -0.90 },
   Nyamugari: { ndvi: 0.395, ndwi: -0.015, spi: -0.720, rain: 233.5, lst: 25.8, lstAnomaly: 1.80 },
   Nyarubuye: { ndvi: 0.412, ndwi: 0.010, spi: -0.520, rain: 247.5, lst: 25.3, lstAnomaly: 1.30 },
-  Kirehe:    { ndvi: 0.505, ndwi: 0.158, spi: 0.220, rain: 301.2, lst: 23.4, lstAnomaly: -0.60 },
+  Kirehe: { ndvi: 0.505, ndwi: 0.158, spi: 0.220, rain: 301.2, lst: 23.4, lstAnomaly: -0.60 },
 };
 
 // ── Spatial Engine (GEE Sector Aggregator) ────────────────────────────────────
@@ -144,7 +144,7 @@ export async function fetchSpectralData(date, bounds) {
   try {
     const res = await fetch(`/api/spectral-data?date=${date}&bounds=${JSON.stringify(bounds)}`);
     if (res.ok) return await res.json();
-  } catch (e) {}
+  } catch (e) { }
 
   // Fallback estimation using district centroid averages
   return {
@@ -166,11 +166,11 @@ export async function fetchMembers() {
         return data;
       }
     }
-  } catch (e) {}
+  } catch (e) { }
 
   const cached = localStorage.getItem('agriadapt_members');
   if (cached) {
-    try { return JSON.parse(cached); } catch (e) {}
+    try { return JSON.parse(cached); } catch (e) { }
   }
   return [];
 }
@@ -188,7 +188,7 @@ export async function postMember(member) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(member),
     });
-  } catch (e) {}
+  } catch (e) { }
   return true;
 }
 
@@ -199,7 +199,7 @@ export async function deleteMember(id) {
 
   try {
     await fetch(`/api/members/${encodeURIComponent(id)}`, { method: 'DELETE' });
-  } catch (e) {}
+  } catch (e) { }
   return true;
 }
 
@@ -217,6 +217,6 @@ export async function patchMember(id, updates) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updates),
     });
-  } catch (e) {}
+  } catch (e) { }
   return true;
 }
