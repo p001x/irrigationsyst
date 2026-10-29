@@ -1,0 +1,487 @@
+hhid,clust,district,ur,s5cq1,s5cq8,s5cq13,s5cq14,s5cq20a,poverty,weight
+313597.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,287.39449541284404
+313598.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,287.39449541284404
+313599.0,11513.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,287.39449541284404
+313600.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Moderately poor,287.39449541284404
+313601.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Non Poor,287.39449541284404
+313602.0,11513.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes on grid,No,Non Poor,287.39449541284404
+313603.0,11513.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",Ditch,Yes on grid,No,Non Poor,287.39449541284404
+313604.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,Yes,Non Poor,287.39449541284404
+313605.0,11513.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,287.39449541284404
+313606.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,206.0921052631579
+313607.0,11514.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,206.0921052631579
+313608.0,11514.0,Kirehe,Rural,Unprotected well,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,206.0921052631579
+313609.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,206.0921052631579
+313610.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes on grid,No,Non Poor,206.0921052631579
+313611.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes on grid,No,Non Poor,206.0921052631579
+313612.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,206.0921052631579
+313613.0,11514.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,206.0921052631579
+313614.0,11514.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,206.0921052631579
+313615.0,11515.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,207.02004357298478
+313616.0,11515.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,207.02004357298478
+313617.0,11515.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,207.02004357298478
+313618.0,11515.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Non Poor,207.02004357298478
+313619.0,11515.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,207.02004357298478
+313620.0,11515.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,207.02004357298478
+313621.0,11515.0,Kirehe,Rural,Rain water,"No, always sufficient",Rainwater tank from roof,Yes on grid,Yes,Non Poor,207.02004357298478
+313622.0,11515.0,Kirehe,Rural,Rain water,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,207.02004357298478
+313623.0,11515.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,207.02004357298478
+313624.0,11516.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes both on grid  and from solar,No,Non Poor,200.73048827374086
+313625.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,200.73048827374086
+313626.0,11516.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Non Poor,200.73048827374086
+313627.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes on grid,No,Non Poor,200.73048827374086
+313628.0,11516.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,200.73048827374086
+313629.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,Yes on grid,No,Non Poor,200.73048827374086
+313630.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes from solar,No,Non Poor,200.73048827374086
+313631.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,200.73048827374086
+313632.0,11516.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,200.73048827374086
+313633.0,11517.0,Kirehe,Urban,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,307.5608048993875
+313634.0,11517.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,307.5608048993875
+313635.0,11517.0,Kirehe,Urban,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,307.5608048993875
+313636.0,11517.0,Kirehe,Urban,Unprotected spring,"No, always sufficient",No measures,No,No,Moderately poor,307.5608048993875
+313637.0,11517.0,Kirehe,Urban,Unprotected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,307.5608048993875
+313638.0,11517.0,Kirehe,Urban,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,307.5608048993875
+313639.0,11517.0,Kirehe,Urban,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Non Poor,307.5608048993875
+313640.0,11517.0,Kirehe,Urban,Protected spring,"No, always sufficient",No measures,No,No,Severaly Poor,307.5608048993875
+313641.0,11517.0,Kirehe,Urban,Protected spring,"No, always sufficient",No measures,No,No,Moderately poor,307.5608048993875
+313642.0,11518.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,194.3928178012778
+313643.0,11518.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,194.3928178012778
+313644.0,11518.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,Yes,Non Poor,194.3928178012778
+313645.0,11518.0,Kirehe,Rural,Tube Well/Borehole,"No, always sufficient",No measures,Yes from solar,No,Non Poor,194.3928178012778
+313646.0,11518.0,Kirehe,Rural,Tube Well/Borehole,"Yes, at least once",No measures,No,No,Moderately poor,194.3928178012778
+313647.0,11518.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,Yes,Non Poor,194.3928178012778
+313648.0,11518.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,194.3928178012778
+313649.0,11518.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,194.3928178012778
+313650.0,11518.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Non Poor,194.3928178012778
+313651.0,11519.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,231.50155971479498
+313652.0,11519.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,231.50155971479498
+313653.0,11519.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,231.50155971479498
+313654.0,11519.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Severaly Poor,231.50155971479498
+313655.0,11519.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,231.50155971479498
+313656.0,11519.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Moderately poor,231.50155971479498
+313657.0,11519.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,231.50155971479498
+313658.0,11519.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,231.50155971479498
+313659.0,11519.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,231.50155971479498
+313660.0,11520.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,204.7450980392157
+313661.0,11520.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,204.7450980392157
+313662.0,11520.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,204.7450980392157
+313663.0,11520.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,204.7450980392157
+313664.0,11520.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.7450980392157
+313665.0,11520.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.7450980392157
+313666.0,11520.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,204.7450980392157
+313667.0,11520.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,204.7450980392157
+313668.0,11520.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,204.7450980392157
+313669.0,11521.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313670.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313671.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313672.0,11521.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,226.29721362229105
+313673.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,No,No,Non Poor,226.29721362229105
+313674.0,11521.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313675.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313676.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313677.0,11521.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes from solar,No,Non Poor,226.29721362229105
+313678.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,195.73116290541375
+313679.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,195.73116290541375
+313680.0,11522.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,195.73116290541375
+313681.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,195.73116290541375
+313682.0,11522.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,195.73116290541375
+313683.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,195.73116290541375
+313684.0,11522.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,195.73116290541375
+313685.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,195.73116290541375
+313686.0,11522.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,195.73116290541375
+313687.0,11523.0,Kirehe,Urban,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,277.0798122065728
+313688.0,11523.0,Kirehe,Urban,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,277.0798122065728
+313689.0,11523.0,Kirehe,Urban,Piped to neighbor HH,"Yes, at least once",No measures,No,No,Non Poor,277.0798122065728
+313690.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,277.0798122065728
+313691.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,277.0798122065728
+313692.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Moderately poor,277.0798122065728
+313693.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,277.0798122065728
+313694.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,277.0798122065728
+313695.0,11523.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,277.0798122065728
+313696.0,11524.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,230.6324092855533
+313697.0,11524.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,230.6324092855533
+313698.0,11524.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",Rainwater tank from roof,Yes on grid,No,Non Poor,230.6324092855533
+313699.0,11524.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,230.6324092855533
+313700.0,11524.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,230.6324092855533
+313701.0,11524.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,230.6324092855533
+313702.0,11524.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Non Poor,230.6324092855533
+313703.0,11524.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,No,No,Non Poor,230.6324092855533
+313704.0,11524.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,230.6324092855533
+313705.0,11525.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,201.4249072602014
+313706.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313707.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313708.0,11525.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313709.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313710.0,11525.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313711.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,201.4249072602014
+313712.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes on grid,Yes,Non Poor,201.4249072602014
+313713.0,11525.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,201.4249072602014
+313714.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,214.58861236802414
+313715.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,214.58861236802414
+313716.0,11526.0,Kirehe,Rural,Rain water,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,214.58861236802414
+313717.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,214.58861236802414
+313718.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,214.58861236802414
+313719.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,214.58861236802414
+313720.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,214.58861236802414
+313721.0,11526.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,214.58861236802414
+313722.0,11526.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,214.58861236802414
+313723.0,11527.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes from solar,No,Non Poor,214.49486461251166
+313724.0,11527.0,Kirehe,Rural,Rain water,"Yes, at least once",No measures,No,No,Non Poor,214.49486461251166
+313725.0,11527.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,214.49486461251166
+313726.0,11527.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,214.49486461251166
+313727.0,11527.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,214.49486461251166
+313728.0,11527.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",Ditch,No,No,Non Poor,214.49486461251166
+313729.0,11527.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,No,No,Non Poor,214.49486461251166
+313730.0,11527.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,214.49486461251166
+313731.0,11527.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,214.49486461251166
+313732.0,11528.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,199.75131516021045
+313733.0,11528.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,199.75131516021045
+313734.0,11528.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,199.75131516021045
+313735.0,11528.0,Kirehe,Rural,Rain water,"No, always sufficient",Rainwater tank from roof,No,No,Moderately poor,199.75131516021045
+313736.0,11528.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,199.75131516021045
+313737.0,11528.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,199.75131516021045
+313738.0,11528.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,No,No,Non Poor,199.75131516021045
+313739.0,11528.0,Kirehe,Rural,Rain water,"No, always sufficient",Ditch,Yes from solar,No,Non Poor,199.75131516021045
+313740.0,11528.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes from solar,Yes,Non Poor,199.75131516021045
+313741.0,11529.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,208.68250377073906
+313742.0,11529.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,No,No,Non Poor,208.68250377073906
+313743.0,11529.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,208.68250377073906
+313744.0,11529.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,208.68250377073906
+313745.0,11529.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,208.68250377073906
+313746.0,11529.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,208.68250377073906
+313747.0,11529.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,208.68250377073906
+313748.0,11529.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,208.68250377073906
+313749.0,11529.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,208.68250377073906
+313750.0,11530.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes from solar,No,Moderately poor,202.4951519069166
+313751.0,11530.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,202.4951519069166
+313752.0,11530.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,No,No,Moderately poor,202.4951519069166
+313753.0,11530.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,202.4951519069166
+313754.0,11530.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,202.4951519069166
+313755.0,11530.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,202.4951519069166
+313756.0,11530.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,202.4951519069166
+313757.0,11530.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Moderately poor,202.4951519069166
+313758.0,11530.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,202.4951519069166
+313759.0,11531.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313760.0,11531.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313761.0,11531.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313762.0,11531.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,209.46998491704375
+313763.0,11531.0,Kirehe,Rural,Unprotected well,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,209.46998491704375
+313764.0,11531.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,209.46998491704375
+313765.0,11531.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313766.0,11531.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313767.0,11531.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,209.46998491704375
+313768.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,211.48013415892672
+313769.0,11532.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,211.48013415892672
+313770.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Moderately poor,211.48013415892672
+313771.0,11532.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Moderately poor,211.48013415892672
+313772.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,211.48013415892672
+313773.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,211.48013415892672
+313774.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,211.48013415892672
+313775.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,211.48013415892672
+313776.0,11532.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,211.48013415892672
+313777.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313778.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313779.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,212.3685857321652
+313780.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313781.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,212.3685857321652
+313782.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313783.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313784.0,11533.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,212.3685857321652
+313785.0,11533.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,212.3685857321652
+313786.0,11534.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,Yes,Non Poor,237.76850094876664
+313787.0,11534.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313788.0,11534.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313789.0,11534.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313790.0,11534.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313791.0,11534.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313792.0,11534.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,237.76850094876664
+313793.0,11534.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,237.76850094876664
+313794.0,11534.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,237.76850094876664
+313795.0,11535.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes from solar,No,Non Poor,209.92851824274013
+313796.0,11535.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,209.92851824274013
+313797.0,11535.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,No,No,Moderately poor,209.92851824274013
+313798.0,11535.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,209.92851824274013
+313799.0,11535.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,209.92851824274013
+313800.0,11535.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,209.92851824274013
+313801.0,11535.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,No,Non Poor,209.92851824274013
+313802.0,11535.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,No,Non Poor,209.92851824274013
+313803.0,11535.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,No,Non Poor,209.92851824274013
+313804.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313805.0,11536.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313806.0,11536.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313807.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313808.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313809.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",Ditch,Yes from solar,No,Moderately poor,208.65742475334082
+313810.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313811.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,208.65742475334082
+313812.0,11536.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Moderately poor,208.65742475334082
+313813.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,217.22955523672883
+313814.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,No,No,Non Poor,217.22955523672883
+313815.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Non Poor,217.22955523672883
+313816.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Moderately poor,217.22955523672883
+313817.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,217.22955523672883
+313818.0,11537.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,217.22955523672883
+313819.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,217.22955523672883
+313820.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,No,No,Non Poor,217.22955523672883
+313821.0,11537.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",Ditch,Yes from solar,No,Non Poor,217.22955523672883
+313822.0,11538.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes from solar,No,Non Poor,210.5949579831933
+313823.0,11538.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,210.5949579831933
+313824.0,11538.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,210.5949579831933
+313825.0,11538.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,210.5949579831933
+313826.0,11538.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,210.5949579831933
+313827.0,11538.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,No,Non Poor,210.5949579831933
+313828.0,11538.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,210.5949579831933
+313829.0,11538.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,210.5949579831933
+313830.0,11538.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,210.5949579831933
+313831.0,11539.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,204.74509803921566
+313832.0,11539.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,204.74509803921566
+313833.0,11539.0,Kirehe,Rural,Unprotected spring,"No, always sufficient",No measures,No,No,Non Poor,204.74509803921566
+313834.0,11539.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,204.74509803921566
+313835.0,11539.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.74509803921566
+313836.0,11539.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,204.74509803921566
+313837.0,11539.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Severaly Poor,204.74509803921566
+313838.0,11539.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,204.74509803921566
+313839.0,11539.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.74509803921566
+313840.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,220.27748478701824
+313841.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes on grid,No,Non Poor,220.27748478701824
+313842.0,11540.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,220.27748478701824
+313843.0,11540.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,220.27748478701824
+313844.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,220.27748478701824
+313845.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,220.27748478701824
+313846.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,220.27748478701824
+313847.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,220.27748478701824
+313848.0,11540.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Other(specify),Yes from solar,Yes,Non Poor,220.27748478701824
+313849.0,11541.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,239.15603888614265
+313850.0,11541.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Piped away,Yes on grid,No,Non Poor,239.15603888614265
+313851.0,11541.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,239.15603888614265
+313852.0,11541.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,239.15603888614265
+313853.0,11541.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,239.15603888614265
+313854.0,11541.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,239.15603888614265
+313855.0,11541.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,239.15603888614265
+313856.0,11541.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,239.15603888614265
+313857.0,11541.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,239.15603888614265
+313858.0,11542.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes on grid,No,Non Poor,218.0618523832297
+313859.0,11542.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,No,No,Non Poor,218.0618523832297
+313860.0,11542.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,218.0618523832297
+313861.0,11542.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,218.0618523832297
+313862.0,11542.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Moderately poor,218.0618523832297
+313863.0,11542.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,Yes on grid,Yes,Non Poor,218.0618523832297
+313864.0,11542.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,No,Non Poor,218.0618523832297
+313865.0,11542.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,218.0618523832297
+313866.0,11542.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,218.0618523832297
+313867.0,11543.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,292.3421900161031
+313868.0,11543.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,292.3421900161031
+313869.0,11543.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,292.3421900161031
+313870.0,11543.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,292.3421900161031
+313871.0,11543.0,Kirehe,Urban,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,Yes,Non Poor,292.3421900161031
+313872.0,11543.0,Kirehe,Urban,Protected spring,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,292.3421900161031
+313873.0,11543.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,292.3421900161031
+313874.0,11543.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,292.3421900161031
+313875.0,11543.0,Kirehe,Urban,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,292.3421900161031
+313876.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.6661805217955
+313877.0,11544.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",Rainwater tank from roof,Yes on grid,Yes,Non Poor,221.6661805217955
+313878.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Non Poor,221.6661805217955
+313879.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,No,Moderately poor,221.6661805217955
+313880.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.6661805217955
+313881.0,11544.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,221.6661805217955
+313882.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,221.6661805217955
+313883.0,11544.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.6661805217955
+313884.0,11544.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes both on grid  and from solar,No,Non Poor,221.6661805217955
+313885.0,11545.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes from solar,No,Non Poor,217.42842269651226
+313886.0,11545.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes from solar,No,Non Poor,217.42842269651226
+313887.0,11545.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,No,No,Non Poor,217.42842269651226
+313888.0,11545.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Moderately poor,217.42842269651226
+313889.0,11545.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,217.42842269651226
+313890.0,11545.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Moderately poor,217.42842269651226
+313891.0,11545.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,No,Non Poor,217.42842269651226
+313892.0,11545.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes from solar,No,Non Poor,217.42842269651226
+313893.0,11545.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,217.42842269651226
+313894.0,11546.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,195.1476715686275
+313895.0,11546.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313896.0,11546.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313897.0,11546.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313898.0,11546.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313899.0,11546.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Piped away,Yes on grid,No,Non Poor,195.1476715686275
+313900.0,11546.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313901.0,11546.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,195.1476715686275
+313902.0,11546.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,195.1476715686275
+313903.0,11547.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,218.28196402527954
+313904.0,11547.0,Kirehe,Rural,Tube Well/Borehole,"Yes, at least once",No measures,No,No,Non Poor,218.28196402527954
+313905.0,11547.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,218.28196402527954
+313906.0,11547.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,218.28196402527954
+313907.0,11547.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,218.28196402527954
+313908.0,11547.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,No,No,Non Poor,218.28196402527954
+313909.0,11547.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,218.28196402527954
+313910.0,11547.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,No,No,Non Poor,218.28196402527954
+313911.0,11547.0,Kirehe,Rural,Tube Well/Borehole,"Yes, at least once",No measures,Yes from solar,Yes,Non Poor,218.28196402527954
+313912.0,11548.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,210.47223364870425
+313913.0,11548.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,210.47223364870425
+313914.0,11548.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Moderately poor,210.47223364870425
+313915.0,11548.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,210.47223364870425
+313916.0,11548.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,210.47223364870425
+313917.0,11548.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,210.47223364870425
+313918.0,11548.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,No,No,Non Poor,210.47223364870425
+313919.0,11548.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,210.47223364870425
+313920.0,11548.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,210.47223364870425
+313921.0,11549.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Non Poor,203.17013574660635
+313922.0,11549.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes from solar,No,Non Poor,203.17013574660635
+313923.0,11549.0,Kirehe,Rural,Unprotected spring,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,203.17013574660635
+313924.0,11549.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,203.17013574660635
+313925.0,11549.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,203.17013574660635
+313926.0,11549.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes from solar,No,Non Poor,203.17013574660635
+313927.0,11549.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,No,Non Poor,203.17013574660635
+313928.0,11549.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,203.17013574660635
+313929.0,11549.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,203.17013574660635
+313930.0,11550.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,235.02430267881803
+313931.0,11550.0,Kirehe,Rural,Lake/Pond/Surface water,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,235.02430267881803
+313932.0,11550.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,235.02430267881803
+313933.0,11550.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,235.02430267881803
+313934.0,11550.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,No,No,Moderately poor,235.02430267881803
+313935.0,11550.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,235.02430267881803
+313936.0,11550.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,235.02430267881803
+313937.0,11550.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,235.02430267881803
+313938.0,11550.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,235.02430267881803
+313939.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,214.0516934046346
+313940.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,214.0516934046346
+313941.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,214.0516934046346
+313942.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,Yes from solar,Yes,Non Poor,214.0516934046346
+313943.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,214.0516934046346
+313944.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,214.0516934046346
+313945.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,No,No,Non Poor,214.0516934046346
+313946.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"No, always sufficient",No measures,No,No,Non Poor,214.0516934046346
+313947.0,11551.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,No,No,Non Poor,214.0516934046346
+313948.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,216.89099368560983
+313949.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,216.89099368560983
+313950.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,216.89099368560983
+313951.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,216.89099368560983
+313952.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,Yes on grid,Yes,Non Poor,216.89099368560983
+313953.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,Yes,Non Poor,216.89099368560983
+313954.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,216.89099368560983
+313955.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,216.89099368560983
+313956.0,11552.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Ditch,Yes from solar,No,Non Poor,216.89099368560983
+313957.0,11553.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,No,No,Non Poor,206.94665823318576
+313958.0,11553.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313959.0,11553.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,206.94665823318576
+313960.0,11553.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313961.0,11553.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313962.0,11553.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313963.0,11553.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,206.94665823318576
+313964.0,11553.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313965.0,11553.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,No,Non Poor,206.94665823318576
+313966.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,Yes,Non Poor,193.18690702087284
+313967.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,Yes,Non Poor,193.18690702087284
+313968.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,193.18690702087284
+313969.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,193.18690702087284
+313970.0,11554.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,193.18690702087284
+313971.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,193.18690702087284
+313972.0,11554.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,193.18690702087284
+313973.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,193.18690702087284
+313974.0,11554.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,No,No,Non Poor,193.18690702087284
+313975.0,11555.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,241.21790902595853
+313976.0,11555.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,241.21790902595853
+313977.0,11555.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,241.21790902595853
+313978.0,11555.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes on grid,No,Non Poor,241.21790902595853
+313979.0,11555.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes on grid,No,Non Poor,241.21790902595853
+313980.0,11555.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,241.21790902595853
+313981.0,11555.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,Yes on grid,No,Non Poor,241.21790902595853
+313982.0,11555.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,241.21790902595853
+313983.0,11555.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,241.21790902595853
+313984.0,11556.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,209.83193277310926
+313985.0,11556.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes both on grid  and from solar,No,Non Poor,209.83193277310926
+313986.0,11556.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,209.83193277310926
+313987.0,11556.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,209.83193277310926
+313988.0,11556.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Moderately poor,209.83193277310926
+313989.0,11556.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,Yes,Non Poor,209.83193277310926
+313990.0,11556.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,209.83193277310926
+313991.0,11556.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,209.83193277310926
+313992.0,11556.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Moderately poor,209.83193277310926
+313993.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+313994.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+313995.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+313996.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+313997.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+313998.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,203.15792673658612
+313999.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+314000.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,203.15792673658612
+314001.0,11557.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,203.15792673658612
+314002.0,11558.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,208.4904351984696
+314003.0,11558.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,208.4904351984696
+314004.0,11558.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,208.4904351984696
+314005.0,11558.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,208.4904351984696
+314006.0,11558.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,208.4904351984696
+314007.0,11558.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,No,Non Poor,208.4904351984696
+314008.0,11558.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,208.4904351984696
+314009.0,11558.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,208.4904351984696
+314010.0,11558.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,208.4904351984696
+314011.0,11559.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,201.29433795990306
+314012.0,11559.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",Rainwater tank from roof,Yes on grid,No,Non Poor,201.29433795990306
+314013.0,11559.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,201.29433795990306
+314014.0,11559.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Ditch,Yes on grid,Yes,Non Poor,201.29433795990306
+314015.0,11559.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",Rainwater tank from roof,Yes on grid,Yes,Non Poor,201.29433795990306
+314016.0,11559.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",Rainwater tank from roof,Yes on grid,Yes,Non Poor,201.29433795990306
+314017.0,11559.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,201.29433795990306
+314018.0,11559.0,Kirehe,Rural,Piped into Dwelling,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,201.29433795990306
+314019.0,11559.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,201.29433795990306
+314020.0,11560.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,221.80718954248363
+314021.0,11560.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,221.80718954248363
+314022.0,11560.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314023.0,11560.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314024.0,11560.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes from solar,No,Non Poor,221.80718954248363
+314025.0,11560.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314026.0,11560.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314027.0,11560.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314028.0,11560.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,221.80718954248363
+314029.0,11561.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314030.0,11561.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",Ditch,Yes on grid,Yes,Non Poor,150.54786620530567
+314031.0,11561.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314032.0,11561.0,Kirehe,Rural,Lake/Pond/Surface water,"No, always sufficient",No measures,Yes from solar,No,Non Poor,150.54786620530567
+314033.0,11561.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,150.54786620530567
+314034.0,11561.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314035.0,11561.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314036.0,11561.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314037.0,11561.0,Kirehe,Rural,River/Stream/Irrigation Channel,"Yes, at least once",No measures,Yes on grid,Yes,Non Poor,150.54786620530567
+314038.0,11562.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,209.58159641809476
+314039.0,11562.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,209.58159641809476
+314040.0,11562.0,Kirehe,Rural,Piped to neighbor HH,"Yes, at least once",No measures,No,No,Non Poor,209.58159641809476
+314041.0,11562.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes from solar,No,Non Poor,209.58159641809476
+314042.0,11562.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes from solar,No,Non Poor,209.58159641809476
+314043.0,11562.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes from solar,No,Non Poor,209.58159641809476
+314044.0,11562.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes from solar,No,Non Poor,209.58159641809476
+314045.0,11562.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,No,No,Non Poor,209.58159641809476
+314046.0,11562.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,209.58159641809476
+314047.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",Ditch,Yes from solar,No,Non Poor,211.07742065898526
+314048.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,211.07742065898526
+314049.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,211.07742065898526
+314050.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Non Poor,211.07742065898526
+314051.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Moderately poor,211.07742065898526
+314052.0,11563.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes on grid,No,Non Poor,211.07742065898526
+314053.0,11563.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,No,No,Non Poor,211.07742065898526
+314054.0,11563.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes from solar,No,Non Poor,211.07742065898526
+314055.0,11563.0,Kirehe,Rural,Protected spring,"Yes, at least once",No measures,Yes on grid,No,Non Poor,211.07742065898526
+314056.0,11564.0,Kirehe,Rural,Piped to neighbor HH,"No, always sufficient",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314057.0,11564.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,Yes,Non Poor,213.39629936481631
+314058.0,11564.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314059.0,11564.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,Yes,Non Poor,213.39629936481631
+314060.0,11564.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314061.0,11564.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314062.0,11564.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,213.39629936481631
+314063.0,11564.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314064.0,11564.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes on grid,No,Non Poor,213.39629936481631
+314065.0,11565.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Moderately poor,204.7450980392157
+314066.0,11565.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,No,No,Moderately poor,204.7450980392157
+314067.0,11565.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,204.7450980392157
+314068.0,11565.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.7450980392157
+314069.0,11565.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,204.7450980392157
+314070.0,11565.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,204.7450980392157
+314071.0,11565.0,Kirehe,Rural,Protected spring,"No, always sufficient",No measures,Yes from solar,Yes,Non Poor,204.7450980392157
+314072.0,11565.0,Kirehe,Rural,Public tap/standpipe,"Yes, at least once",No measures,Yes both on grid  and from solar,No,Non Poor,204.7450980392157
+314073.0,11565.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Moderately poor,204.7450980392157
+314074.0,11566.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,Yes,Non Poor,255.34302456614833
+314075.0,11566.0,Kirehe,Rural,"Piped into compound, yard/pot","Yes, at least once",No measures,Yes on grid,Yes,Non Poor,255.34302456614833
+314076.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Moderately poor,255.34302456614833
+314077.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,255.34302456614833
+314078.0,11566.0,Kirehe,Rural,"Piped into compound, yard/pot","No, always sufficient",No measures,Yes on grid,Yes,Non Poor,255.34302456614833
+314079.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,Yes,Non Poor,255.34302456614833
+314080.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes on grid,No,Non Poor,255.34302456614833
+314081.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,Yes from solar,No,Non Poor,255.34302456614833
+314082.0,11566.0,Kirehe,Rural,Public tap/standpipe,"No, always sufficient",No measures,No,No,Non Poor,255.34302456614833

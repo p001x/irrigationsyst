@@ -1,0 +1,42 @@
+{
+  "survey": "NISR Integrated Household Living Conditions Survey (EICV7)",
+  "geographic_scope": "Kirehe District, Eastern Province, Rwanda",
+  "sample_size": {
+    "surveyed_households": 486,
+    "surveyed_individuals": 1955,
+    "surveyed_clusters": 54
+  },
+  "telecommunications_and_digital_access": {
+    "mobile_phone_penetration_pct": 37.0,
+    "basic_feature_phone_pct": 79.0,
+    "smart_phone_pct": 17.2,
+    "mobile_money_adoption_pct": 94.1,
+    "household_internet_connection_pct": 16.7,
+    "household_without_internet_pct": 83.3
+  },
+  "water_and_climate_vulnerability": {
+    "experienced_water_shortage_last_4w_pct": 49.8,
+    "no_rainwater_harvesting_pct": 87.0,
+    "has_rainwater_tank_pct": 6.0,
+    "severe_shocks_reported": {
+      "Serious illness or accident of household member ": 32,
+      "Unusually high prices for food": 11,
+      "Drought/irregular rains, prolonged dry spell": 8,
+      "Other, (Specify)": 7,
+      "Loss or reduced employment or Income for a household member (not counting death) ": 6
+    }
+  },
+  "energy_and_grid_access": {
+    "connected_to_national_grid_pct": 54.5,
+    "solar_offgrid_pct": 21.6,
+    "no_electricity_pct": 23.0
+  },
+  "welfare_and_livelihoods": {
+    "worked_on_own_farm_pct": 40.7,
+    "welfare_distribution_pct": {
+      "Non Poor": 88.3,
+      "Moderately poor": 11.1,
+      "Severaly Poor": 0.6
+    }
+  }
+}

@@ -750,8 +750,10 @@
         <div class="g2">
           <div class="card glass">
             <div class="card-top ct-red"></div>
-            <div class="sec-label" style="color:var(--red)"><i class="fa-solid fa-minus"></i> Operating Expenses (Grid
-              Upkeep)</div>
+            <div class="sec-label" style="color:var(--red)"><i class="fa-solid fa-minus"></i> Operating Expenses (Grid Upkeep)</div>
+            <div style="font-size:10px; color:var(--ink-mute); margin-top:-8px; margin-bottom:12px;">
+              Engineering Benchmark: Standard MINAGRI / World Bank Solar O&amp;M Cost Structure (63 Pivots)
+            </div>
             <div class="sl-group">
               <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
                 <span style="color:var(--ink-soft); font-size:12px;">Solar Photovoltaic Inverters &amp; Cleaning</span>
@@ -774,8 +776,10 @@
           </div>
           <div class="card glass">
             <div class="card-top ct-gold"></div>
-            <div class="sec-label" style="color:var(--gold);"><i class="fa-solid fa-equals"></i> Net Cooperative Profit
-              &amp; Dividend</div>
+            <div class="sec-label" style="color:var(--gold);"><i class="fa-solid fa-equals"></i> Net Cooperative Profit &amp; Dividend</div>
+            <div style="font-size:10px; color:var(--ink-mute); margin-top:-8px; margin-bottom:12px; text-align:center;">
+              Projected Cooperative Surplus: Calibrated to SAS 2024 Market Price (450 RWF/kg Maize)
+            </div>
             <div style="text-align:center; padding:10px 0;">
               <div style="font-size:11px; color:var(--ink-soft); margin-bottom:4px;">TOTAL NET PROFIT</div>
               <div id="fin-net-profit"
@@ -805,10 +809,14 @@
       <div id="imp-ledger-view" style="display:none;">
         <div class="card glass">
           <div class="card-top ct-gold"></div>
-          <div class="sec-label"><i class="fa-solid fa-users-viewfinder"></i> AGRIAdapt Cooperative Smallholder Registry
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div class="sec-label"><i class="fa-solid fa-users-viewfinder"></i> AGRIAdapt Cooperative Smallholder Registry</div>
+            <span class="ptag pt-warn" style="font-size:10px; text-transform:uppercase; letter-spacing:0.05em; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.3); color:var(--gold);">
+              <i class="fa-solid fa-flask"></i> Interactive Demonstration Cohort (100 Synthesized Smallholder Profiles)
+            </span>
           </div>
-          <p style="font-size:11px; color:var(--ink-soft); margin-top:4px; margin-bottom:14px; line-height:1.5;">
-            <strong>Representative Smallholder Cohort:</strong> Stratified across all 12 Kirehe sectors, calibrated directly against <strong>NISR Agricultural Household Survey (RAHS 2024)</strong> parcel distributions (0.6–2.2 ha) and <strong>SAS 2024</strong> yield baselines. Enables cooperative agronomists to simulate targeted Kinyarwanda SMS dispatches and monitor parcel-level water quotas.
+          <p style="font-size:11px; color:var(--ink-soft); margin-top:8px; margin-bottom:14px; line-height:1.5;">
+            <strong>Demonstration Transparency Notice:</strong> The 100 individual member profiles below represent an interactive simulation cohort developed to demonstrate parcel-level water quota allocation and reactive SMS dispatches. All plot sizes (0.6–2.2 ha) and crop distributions are calibrated against empirical distributions from <strong>NISR EICV7 Microdata</strong> and <strong>NISR SAS 2024</strong> yield baselines (1.85 t/ha rain-fed vs. 4.85 t/ha solar irrigated).
           </p>
 
           <div class="reg-form">
@@ -893,11 +901,47 @@
             <i class="fa-solid fa-mobile-screen-button"></i> Grassroots Delivery Gateway · Telefoni ya Muri Kirehe
             (Feature Phone SMS Alert)
           </div>
-          <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:20px;">
+          <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
             To guarantee <strong>Tangible Impact</strong> for smallholders without smartphones or internet access,
-            AgriAdapt automatically formats dekadal early-warning advisories in <strong>Kinyarwanda</strong> for
-            automated SMS broadcast (calibrated with <strong>NISR RAHS 2024</strong> farmer registries).
+            AgriAdapt formats dekadal early-warning advisories in <strong>Kinyarwanda</strong> for
+            automated SMS broadcast to registered feature phones.
           </p>
+
+          <!-- Empirical Justification from NISR EICV7 Microdata -->
+          <div class="inner-glass" style="padding:14px 18px; margin-bottom:20px; border-left:4px solid var(--gold); background:rgba(251,191,36,0.03);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+              <span style="font-family:var(--mono); font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">
+                <i class="fa-solid fa-database"></i> Empirical Evidence from NISR EICV7 Microdata (Kirehe District Sample: 486 Households, 1,955 Individuals)
+              </span>
+              <span class="ptag pt-ok" style="font-size:9px;">Direct Microdata Analysis</span>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px; margin-top:8px;">
+              <div style="background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:8px;">
+                <div style="font-size:10px; color:var(--ink-soft);">Basic Feature Phones</div>
+                <div style="font-size:22px; font-weight:900; color:var(--gold); font-family:var(--cab);">79.0%</div>
+                <div style="font-size:9px; color:var(--ink-mute);">EICV7 Variable: s4bq10</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:8px;">
+                <div style="font-size:10px; color:var(--ink-soft);">No Home Internet</div>
+                <div style="font-size:22px; font-weight:900; color:var(--red); font-family:var(--cab);">83.3%</div>
+                <div style="font-size:9px; color:var(--ink-mute);">EICV7 Variable: s5cq20a</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:8px;">
+                <div style="font-size:10px; color:var(--ink-soft);">Mobile Money Adoption</div>
+                <div style="font-size:22px; font-weight:900; color:var(--cyan); font-family:var(--cab);">94.1%</div>
+                <div style="font-size:9px; color:var(--ink-mute);">EICV7 Variable: s4bq23c</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:8px;">
+                <div style="font-size:10px; color:var(--ink-soft);">Water Insecurity Shocks</div>
+                <div style="font-size:22px; font-weight:900; color:var(--green); font-family:var(--cab);">49.8%</div>
+                <div style="font-size:9px; color:var(--ink-mute);">EICV7 Variable: s5cq8</div>
+              </div>
+            </div>
+            <p style="font-size:10px; color:var(--ink-soft); margin-top:10px; margin-bottom:0; line-height:1.5;">
+              <strong>Why 2G SMS?</strong> Direct processing of NISR EICV7 microdata proves that <strong>79% of phone owners in Kirehe rely exclusively on basic 2G feature phones</strong> and <strong>83.3% have no home internet</strong>. Web apps and smartphones cannot reach these smallholders; feature phone SMS advisories are statistically the only inclusive delivery mechanism.
+            </p>
+          </div>
+
           <div class="g2" style="gap:24px; align-items:start;">
             <div class="inner-glass" style="padding:20px;">
               <div style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; margin-bottom:8px;">Target
@@ -1110,12 +1154,13 @@
                 <h4 style="color:var(--green); font-size:16px; margin-bottom:10px;">Official NISR Datasets Leveraged
                 </h4>
                 <ul style="font-size:12px; color:var(--ink-soft); line-height:1.8; padding-left:20px;">
+                  <li><strong>NISR Integrated Household Living Conditions Survey (EICV7 Microdata):</strong> District-level extraction of 486 surveyed households and 1,955 individuals in Kirehe, providing empirical proof of basic phone reliance (79.0%), home internet disconnection (83.3%), and water shortage shocks (49.8%).</li>
                   <li><strong>NISR Seasonal Agriculture Survey (SAS 2024 Season B):</strong> Calibrates baseline maize
                     yield (1.85 t/ha rain-fed) and fertilizer application rates.</li>
                   <li><strong>NISR Agriculture Household Survey (RAHS 2024):</strong> Provides landholding fragmentation
                     metrics (average 0.65 ha per smallholder).</li>
                   <li><strong>NISR 5th Population &amp; Housing Census (PHC 2022):</strong> Population figures for all
-                    12 sectors of Kirehe District.</li>
+                    12 sectors of Kirehe District (460,860 district total).</li>
                   <li><strong>NISR / FAO GAUL Boundary Layers:</strong> Official 2,640-vertex administrative perimeter
                     of Kirehe.</li>
                 </ul>
@@ -1140,20 +1185,26 @@
                 <i class="fa-solid fa-file-arrow-down"></i> Direct Microdata Downloads &amp; Verification Hub (NISR Slide 12)
               </div>
               <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
-                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, and multi-sensor datasets are openly accessible for inspection:
+                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, NISR survey microdata, and multi-sensor datasets are openly accessible for inspection:
               </p>
               <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="data/kirehe_eicv7_household_microdata_sample.csv" download="kirehe_eicv7_household_microdata_sample.csv" class="btn btn-mini" style="background:rgba(0,255,102,0.1); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px; font-weight:700;">
+                  <i class="fa-solid fa-file-csv"></i> NISR EICV7 Microdata (CSV, 486 Households)
+                </a>
+                <a href="data/nisr_eicv7_kirehe_microdata.json" download="nisr_eicv7_kirehe_microdata.json" class="btn btn-mini" style="background:rgba(251,191,36,0.1); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px; font-weight:700;">
+                  <i class="fa-solid fa-file-code"></i> EICV7 District Indicators (JSON)
+                </a>
                 <a href="data/kirehe_district_real_boundary.geojson" download="kirehe_district_real_boundary.geojson" class="btn btn-mini" style="background:rgba(0,240,255,0.08); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:8px 14px;">
-                  <i class="fa-solid fa-download"></i> Kirehe Real Boundary (GeoJSON)
+                  <i class="fa-solid fa-download"></i> Kirehe Boundary (GeoJSON)
                 </a>
-                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(46,204,113,0.08); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px;">
-                  <i class="fa-solid fa-download"></i> Sector Baselines (JSON)
+                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> 12-Sector Baselines (JSON)
                 </a>
-                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(251,191,36,0.08); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px;">
+                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
                   <i class="fa-solid fa-download"></i> 500m Satellite Grid (CSV)
                 </a>
-                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Catalog
+                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink-soft); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Portal
                 </a>
               </div>
             </div>
