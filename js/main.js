@@ -7,7 +7,7 @@ import {
   tab, setTheme, showToast, hideToast, safeSet, safeHTML, safeStyle,
   update, renderShap, resetEmergency, checkSpectralGating,
   updateROI, updateSectorEconomy,
-  switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms, triggerMemberSms,
+  switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms,
 } from './ui.js';
 import {
   fillLedger, renderLedger, addMember, removeMember, registerMember,
