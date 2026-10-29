@@ -4,9 +4,8 @@ import { fetchMembers, postMember, deleteMember, patchMember } from './api.js';
 import { _runMonitorCycle }             from './monitor.js';
 import { SECTOR_HA, CROP_DATA, KIREHE_SECTORS, MARKET_PRICE_RWF_T, KIREHE_RF_MEAN, KIREHE_RF_STD } from './constants.js';
 import { computeBaselineWRSI, computeOptimizedWRSI } from './wrsi.js';
+import { EICV7_KIREHE_MEMBERS }         from './eicv7_members_data.js';
 
-const FIRST_NAMES  = ['Jean','Marie','Basile','Claudine','Bosco','Alice','Emmanuel','Pascasie','Theophile','Bernadette','Esperance','Dieudonne'];
-const LAST_NAMES   = ['Mukasa','Uwimana','Habimana','Ndayisaba','Gakwaya','Murenzi','Rugira','Kamanzi','Sebahutu','Bigirimana','Mugabo','Nkurunziza'];
 const SECTORS_LIST = ['Nasho','Mpanga','Gahara','Gatore','Kigarama','Kigina','Kirehe','Mahama','Musaza','Mushikiri','Nyamugari','Nyarubuye'];
 const CROPS_LIST   = ['Maize','Beans','Coffee','Vegetables'];
 
@@ -39,42 +38,20 @@ export function getIrrigationPlan(wrsi, crop) {
 }
 
 export function _seedMembers() {
-  state.GLOBAL_MEMBERS = [];
-  for (let k = 1; k <= 100; k++) {
-    const sector   = SECTORS_LIST[k % SECTORS_LIST.length];
-    const crop     = CROPS_LIST[k % CROPS_LIST.length];
-    // Realistic smallholder parcel size calibrated to NISR SAS 2024 (0.5 to 2.2 ha)
-    const ha       = parseFloat((0.6 + (k % 5) * 0.35).toFixed(1));
-    const wrsi     = Math.round(70 + (k % 25));
-    const cropDef  = CROP_DATA[crop]  || CROP_DATA.Maize;
-    const sectProf = KIREHE_SECTORS.find(s => s.n === sector) || { fert: 1.0 };
-    const yieldT   = ha * cropDef.yield * sectProf.fert * (wrsi / 100);
-    state.GLOBAL_MEMBERS.push({
-      id:        'NISR-RAHS-KIR-' + String(k).padStart(3, '0'),
-      name:      FIRST_NAMES[k % FIRST_NAMES.length] + ' ' + LAST_NAMES[(k + 3) % LAST_NAMES.length],
-      sector,
-      ha,
-      crop,
-      wrsi,
-      ndvi:      parseFloat((0.35 + (k % 10) * 0.04).toFixed(2)),
-      spi:       parseFloat(((k % 5) / 2.5 - 1).toFixed(1)),
-      ai_interp: '',
-      yield_rwf: parseFloat((yieldT * MARKET_PRICE_RWF_T).toFixed(0)),
-    });
-  }
+  state.GLOBAL_MEMBERS = JSON.parse(JSON.stringify(EICV7_KIREHE_MEMBERS));
 }
 
 export function _ensureMembers() {
-  if (state.GLOBAL_MEMBERS.length > 0) return;
+  if (state.GLOBAL_MEMBERS.length > 0 && state.GLOBAL_MEMBERS[0].id && !state.GLOBAL_MEMBERS[0].id.startsWith('NISR-RAHS-KIR')) return;
   _seedMembers();
   try { window.update?.(); } catch (e) { /* sync financials */ }
 }
 
 export async function fillLedger() {
-  // 1. Try PostgreSQL database first
+  // 1. Check if DB has members
   try {
     const dbMembers = await fetchMembers();
-    if (dbMembers && dbMembers.length > 0) {
+    if (dbMembers && dbMembers.length > 0 && dbMembers[0].id && !dbMembers[0].id.startsWith('NISR-RAHS-KIR')) {
       state.GLOBAL_MEMBERS = dbMembers;
       renderLedger();
       window.update?.();
@@ -82,25 +59,23 @@ export async function fillLedger() {
     }
   } catch (e) { /* fall through */ }
 
-  // 2. Migrate localStorage data to DB if present
+  // 2. Clear old legacy localStorage cache if it held synthetic names
   const saved = localStorage.getItem('agriadapt_members');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
-      if (parsed && parsed.length > 0) {
+      if (parsed && parsed.length > 0 && parsed[0].id && !parsed[0].id.startsWith('NISR-RAHS-KIR')) {
         state.GLOBAL_MEMBERS = parsed;
-        for (const m of parsed) { try { await postMember(m); } catch (e) {} }
-        localStorage.removeItem('agriadapt_members');
         renderLedger();
         window.update?.();
         return;
       }
     } catch (e) {}
+    localStorage.removeItem('agriadapt_members');
   }
 
-  // 3. Seed 100 demo members and persist
+  // 3. Seed with authentic NISR EICV7 surveyed households
   _seedMembers();
-  for (const m of state.GLOBAL_MEMBERS) { try { await postMember(m); } catch (e) {} }
   renderLedger();
   window.update?.();
 }
@@ -221,8 +196,11 @@ export function renderLedger() {
     const color = m.wrsi > 85 ? 'var(--green)' : m.wrsi > 70 ? 'var(--gold)' : 'var(--red)';
     const plan  = getIrrigationPlan(m.wrsi || 0, m.crop);
     tr.innerHTML = `
-      <td><span style="font-weight:700;color:white;font-size:14px;">${m.name}</span><br>
-          <span style="font-size:10px;color:var(--ink-mute)">ID: ${m.id}</span></td>
+      <td>
+        <span style="font-weight:700;color:white;font-size:13px;">${m.name}</span><br>
+        <span style="font-size:10px;color:var(--cyan);font-family:var(--mono);">${m.id} ${m.clust ? '· Clust ' + m.clust : ''}</span><br>
+        <span style="font-size:10px;color:var(--ink-soft);"><i class="fa-solid fa-user-tag" style="font-size:9px;opacity:0.7;"></i> ${m.demo_sub || 'NISR Surveyed Smallholder'}</span>
+      </td>
       <td style="color:var(--ink-soft);">${m.sector}</td>
       <td style="font-family:var(--mono); font-weight:700;">${m.ha} ha</td>
       <td style="color:var(--cyan); font-weight:700;">
