@@ -53,8 +53,17 @@ export function _runMonitorCycle() {
     }
   }
 
-  if (document.getElementById('p-analysis')?.classList.contains('active')) window.renderAnalysisHub?.();
-  if (document.getElementById('p-export')?.classList.contains('active'))   window.renderExportHub?.();
-  if (document.getElementById('p-ledger')?.classList.contains('active'))   window.renderLedger?.();
-  if (document.getElementById('p-model')?.classList.contains('active'))    window.renderShap?.();
+  // Refresh active subviews during periodic monitoring
+  const impActive = document.getElementById('p-impact')?.classList.contains('active');
+  if (impActive) {
+    const ledger = document.getElementById('imp-ledger-view');
+    if (ledger && ledger.style.display !== 'none') window.renderLedger?.();
+    const exportHub = document.getElementById('imp-export-view');
+    if (exportHub && exportHub.style.display !== 'none') window.renderExportHub?.();
+  }
+  const valActive = document.getElementById('p-validation')?.classList.contains('active');
+  if (valActive) {
+    const modelView = document.getElementById('val-model-view');
+    if (modelView && modelView.style.display !== 'none') window.renderShap?.();
+  }
 }

@@ -8,6 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Live Production URL:** [https://p001x.github.io/irrigationsyst/](https://p001x.github.io/irrigationsyst/)  
+> **Sample Admin Credentials (Slide 11):** Password `admin` or `kirehe2026` (unlocks Agronomist Ledger editing)  
 > **Target Jurisdiction:** Kirehe District, Eastern Province, Rwanda (12 Administrative Sectors | 460,860 Citizens | 84,120 Agricultural Households)  
 > **Primary National Framework:** National Strategy for Transformation (NST2, 2024–2029) & Vision 2050  
 
@@ -215,6 +216,12 @@ The platform is designed to serve both high-level district agronomists and grass
 * **Feature Attribution Visualizer:** Interactive TreeSHAP chart displaying exact contributions of root-zone moisture anomalies and heat stress indicators.
 * **NISR Benchmark Verification:** Direct side-by-side data comparison between predicted values and official SAS 2024 / RAHS 2024 / Census 2022 survey data.
 
+### 5.5 Visual Demonstration Walkthrough (NISR Slide 12 Requirement)
+* **Demo Video File:** [`demo/demo.gif`](./demo/demo.gif) (and [`demo/demo.webp`](./demo/demo.webp))
+* **Presentation Script:** [`DEMO_VIDEO_SCRIPT.md`](./DEMO_VIDEO_SCRIPT.md) — 2 minutes 45 seconds walkthrough strictly adhering to the under-3-minute limitation specified in Slide 12.
+
+![AgriAdapt Screen Recording Demonstration](./demo/demo.gif)
+
 ---
 
 ## 6. Reproducibility Guide (`run_pipeline.py`)
@@ -322,6 +329,9 @@ irrigationsyst/
 │   ├── kirehe_district_real_boundary.geojson  # Exact official outer boundary of Kirehe (1,184.85 km2)
 │   ├── nisr_kirehe_sector_baselines.json      # Official SAS 2024, RAHS 2024, Census 2022 metrics
 │   └── kirehe_dataset_500m_sample.csv         # Harmonized multi-sensor dataset (24 indicators)
+├── demo/
+│   ├── demo.gif                               # Screen recording demonstration (under 3 min, Slide 12)
+│   └── demo.webp                              # Animated webp format
 ├── js/
 │   ├── api.js                                 # Resilient offline data cache & predictive fallback
 │   ├── constants.js                           # NISR statistical parameters & TreeSHAP weights

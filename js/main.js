@@ -56,7 +56,7 @@ async function toggleAdminMode() {
   if (isAdmin) {
     await adminLogout();
   } else {
-    const pw = window.prompt('Enter admin password:');
+    const pw = window.prompt("Enter admin password (Demo credentials: 'admin' or 'kirehe2026'):", "admin");
     if (!pw) return;
     const ok = await adminLogin(pw);
     if (!ok) { window.alert('Incorrect password.'); return; }
