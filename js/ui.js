@@ -246,29 +246,76 @@ export function switchValSub(subId) {
 // ── Grassroots Feature Phone SMS Simulation (Kinyarwanda & English) ──────────
 const SMS_TEMPLATES = {
   Mahama: {
-    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mahama uri mu kaga k\'amapfa (76.5%). Ubuhehere bw\'ubutaka buri munsi ya 35%. Imvura izabura muri Dekad 6–8. Inama: Sasira ibishingwe ku butaka (mulching) kandi witabaze gahunda y\'amazi yihuse. Guhamagara Agronome: *105# cyangwa 0788-383-103.',
-    en: 'AgriAdapt Kirehe Alert: Mahama Sector is at Extreme Drought Risk (76.5%). Root-zone soil moisture is critically low (<35%). Urgent: Apply soil mulching and mobilize emergency supplemental irrigation. Local Agronomist Hotline: *105# / 0788-383-103.',
-    risk: 'EXTREME RISK (76.5%)'
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mahama uri mu kaga gakomeye k\'amapfa (73.9%). Ubuhehere bw\'ubutaka buri munsi ya 35%. Imvura izabura muri Dekad 6–8. Inama: Sasira ibishingwe ku butaka (mulching) kandi witabaze gahunda y\'amazi yihuse. Guhamagara Agronome: *105# cyangwa 0788-383-103.',
+    en: 'AgriAdapt Kirehe Alert: Mahama Sector is at Extreme Drought Risk (73.9%). Root-zone soil moisture is critically low (<35%). Urgent: Apply soil mulching and mobilize emergency supplemental irrigation. Local Agronomist Hotline: *105# / 0788-383-103.',
+    risk: 'EXTREME RISK (73.9%)',
+    subscribers: '5,240'
   },
   Mpanga: {
-    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mpanga wugarijwe n\'amapfa (71.2%). Ubuhehere bw\'ubutaka buri hasi cyane. Inama: Gabanya gukata ibibabi, hunga izuba ku bihingwa bito, tanga amakuru ku mushinga wa Nasho wo kuhira. Nimero: *105#.',
-    en: 'AgriAdapt Kirehe Alert: Mpanga Sector is facing Severe Drought (71.2%). High thermal stress detected on MODIS. Request cooperative solar water transfer. Agronomist Hotline: *105#.',
-    risk: 'EXTREME RISK (71.2%)'
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mpanga wugarijwe n\'amapfa (68.2%). Ubuhehere bw\'ubutaka buri hasi cyane. Inama: Gabanya gukata ibibabi, hunga izuba ku bihingwa bito, tanga amakuru ku mushinga wo kuhira w\'ikiyaga cya Mpanga. Nimero: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Mpanga Sector is facing Severe Drought (68.2%). High thermal stress detected on MODIS. Request cooperative solar water transfer. Agronomist Hotline: *105#.',
+    risk: 'EXTREME RISK (68.2%)',
+    subscribers: '4,410'
   },
-  Nasho: {
-    rw: 'AgriAdapt Nasho Nexus: Gahunda yo kuhira irakora neza ku ma pivots 63. Amashanyarazi y\'imirasire y\'izuba aratanga 3.3 MW. Amazi y\'ikigega ageze kuri 95%. Icyitonderwa: Muri Dekad 10 kuhira bizahagarikwa mu gihe cy\'isarura.',
-    en: 'AgriAdapt Nasho Hub: 63 center pivots operational via 3.3 MW solar power. Reservoir capacity at 95%. Note: Irrigation suspension scheduled for Dekad 10 grain dry-down phase.',
-    risk: 'STABILIZED (PIVOT IRRIGATED)'
-  },
-  Gatore: {
-    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Gatore uratekanye (Ubuhehere buri hejuru ya 75%). Imyaka imeze neza. Inama: Tegura ifumbire ya NPK ku gihe cy\'imikurire.',
-    en: 'AgriAdapt Kirehe Alert: Gatore Sector is in the Optimal Moisture Zone (>75% WRSI). Nominal crop development. Apply standard nitrogen top-dressing.',
-    risk: 'OPTIMAL / RESILIENT (22.1%)'
+  Nyarubuye: {
+    rw: 'AgriAdapt Kirehe Alert: Nyarubuye iri mu kaga k\'amapfa (65.2%). Ibyago byo kubura imvura birahanitse. Inama: Bika amazi y\'imvura, shyira ifumbire y\'imborera mu mirima kugira ngo ifate amazi. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Nyarubuye Sector is at High Drought Risk (65.2%). Water retention deficit. Implement soil organic mulching and prepare water storage. Hotline: *105#.',
+    risk: 'HIGH RISK (65.2%)',
+    subscribers: '2,680'
   },
   Nyamugari: {
-    rw: 'AgriAdapt Kirehe Alert: Nyamugari iri mu kaga gakomeye k\'amapfa (65.5%). Ubutaka burumagaye. Witabaze gahunda yo kuhira y\'akarere. Guhamagara: *105#.',
-    en: 'AgriAdapt Kirehe Alert: Nyamugari Sector under High Drought Stress (65.5%). Immediate moisture conservation required.',
-    risk: 'HIGH RISK (65.5%)'
+    rw: 'AgriAdapt Kirehe Alert: Nyamugari iri mu kaga gakomeye k\'amapfa (60.9%). Ubutaka burumagaye. Witabaze gahunda yo kuhira y\'akarere. Guhamagara Agronome: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Nyamugari Sector under High Drought Stress (60.9%). Immediate moisture conservation required. Hotline: *105#.',
+    risk: 'HIGH RISK (60.9%)',
+    subscribers: '3,120'
+  },
+  Gahara: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Gahara wugarijwe n\'amapfa (58.7%). Amakoperative arasabwa gufatanya gukoresha ingomero z\'amazi n\'amateme yo ku misozi. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Gahara Sector under High Drought Stress (58.7%). Activate hillside terrace water retention and cooperative catchment dams. Hotline: *105#.',
+    risk: 'HIGH RISK (58.7%)',
+    subscribers: '4,150'
+  },
+  Musaza: {
+    rw: 'AgriAdapt Kirehe Alert: Musaza ifite ibyago biciriritse by\'amapfa (47.8%). Imvura ntabwo iratanga umusaruro uhagije. Tangira gahunda yo kuhira ukoresheje za moteri nto z\'amazi. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Musaza Sector moderate-to-high drought stress (47.8%). Prepare river lift pump irrigation for vegetative growth. Hotline: *105#.',
+    risk: 'MODERATE-TO-HIGH RISK (47.8%)',
+    subscribers: '3,520'
+  },
+  Mushikiri: {
+    rw: 'AgriAdapt Kirehe Alert: Mushikiri iri mu cyiciro giciriritse cy\'amapfa (41.3%). Ubuhehere buracyari mu rugero ariko bugabanuka. Sasira ibishingwe ku bihingwa bya kawa n\'ibishyimbo. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Mushikiri Sector moderate drought stress (41.3%). Soil moisture declining. Apply mulch to coffee and legume parcels. Hotline: *105#.',
+    risk: 'MODERATE RISK (41.3%)',
+    subscribers: '3,310'
+  },
+  Kigina: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Kigina ufite umutekano uciriritse (39.1%). Fata ingamba zo gucukura imiferege ifata amazi y\'akagera. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Kigina Sector moderate vulnerability (39.1%). Maintain watershed drainage canals and optimize rainfall capture. Hotline: *105#.',
+    risk: 'MODERATE RISK (39.1%)',
+    subscribers: '3,450'
+  },
+  Kigarama: {
+    rw: 'AgriAdapt Kirehe Alert: Kigarama ifite ibyago biri munsi y\'impuzandengo (34.8%). Imyaka imeze neza mu bishanga. Komeza gukurikirana ifumbire no kuhira ibihingwa bya kawa. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Kigarama Sector below average risk (34.8%). Valley marshland crops healthy. Ensure balanced fertilization for coffee plots. Hotline: *105#.',
+    risk: 'MODERATE RISK (34.8%)',
+    subscribers: '3,680'
+  },
+  Kirehe: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Kirehe uratekanye (30.4%). Ubuhehere burakwiriye. Inama: Tegura ifumbire ya NPK ku gihe cy\'isarura ryiza ry\'ibigori. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Kirehe Sector stable baseline (30.4%). Adequate soil moisture. Apply scheduled top-dressing for maize. Hotline: *105#.',
+    risk: 'RESILIENT ZONE (30.4%)',
+    subscribers: '3,920'
+  },
+  Nasho: {
+    rw: 'AgriAdapt Nasho Nexus: Gahunda yo kuhira irakora neza ku ma pivots 63. Amashanyarazi y\'imirasire y\'izuba aratanga 3.3 MW. Amazi y\'ikigega ageze kuri 95%. Icyitonderwa: Muri Dekad 10 kuhira bizahagarikwa mu gihe cy\'isarura ry\'ibigori.',
+    en: 'AgriAdapt Nasho Hub: 63 center pivots operational via 3.3 MW solar power. Reservoir capacity at 95%. Note: Irrigation suspension scheduled for Dekad 10 grain dry-down phase.',
+    risk: 'STABILIZED (PIVOT IRRIGATED - 28.5%)',
+    subscribers: '2,099'
+  },
+  Gatore: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Gatore uratekanye cyane (21.7%). Ubuhehere buri hejuru ya 75%. Imyaka imeze neza. Inama: Komeza kurinda imyaka no gusarura ku gihe. Hamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Gatore Sector is in the Optimal Moisture Zone (21.7% historical drought frequency). Nominal crop development. Apply standard nitrogen top-dressing. Hotline: *105#.',
+    risk: 'OPTIMAL / RESILIENT (21.7%)',
+    subscribers: '3,840'
   }
 };
 
@@ -285,7 +332,8 @@ export function updateSmsPreview() {
 export function simulateSmsDispatch() {
   const sel = document.getElementById('sms-sector-select');
   const sector = sel?.value || 'Mahama';
-  const count = sector === 'Mahama' ? '4,820' : sector === 'Mpanga' ? '3,410' : '2,150';
+  const tmpl = SMS_TEMPLATES[sector] || SMS_TEMPLATES.Mahama;
+  const count = tmpl.subscribers || '2,500';
   showToast(`✅ Dispatched Kinyarwanda SMS early warning to ${count} registered smallholders in ${sector}!`);
   safeSet('sms-dispatch-status', `🚀 Sent to ${count} feature phones via Africa's Talking gateway at ${new Date().toLocaleTimeString()}`);
 }

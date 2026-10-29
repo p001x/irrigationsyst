@@ -224,8 +224,10 @@ export function renderLedger() {
       <td><span style="font-weight:700;color:white;font-size:14px;">${m.name}</span><br>
           <span style="font-size:10px;color:var(--ink-mute)">ID: ${m.id}</span></td>
       <td style="color:var(--ink-soft);">${m.sector}</td>
-      <td>${m.ha} ha <span style="font-size:10px;color:var(--ink-mute)">(${m.crop})</span></td>
-      <td style="font-family:var(--mono);">${Math.round(m.ha * 120).toLocaleString()}</td>
+      <td style="font-family:var(--mono); font-weight:700;">${m.ha} ha</td>
+      <td style="color:var(--cyan); font-weight:700;">
+        <i class="fa-solid fa-seedling" style="font-size:11px; margin-right:4px; opacity:0.8;"></i>${m.crop}
+      </td>
       <td style="color:${color};font-weight:900;font-size:16px;" aria-label="WRSI ${m.wrsi}%">${m.wrsi}%</td>
       <td style="font-size:11px;color:var(--ink-soft);">${plan.schedule}</td>
       <td style="font-size:11px;color:${color};">${plan.inputs}</td>
@@ -245,7 +247,7 @@ export function renderLedger() {
           </button>
         </div>
       </td>
-      <td style="color:var(--green);font-weight:700;font-family:var(--mono);">${Math.round(m.yield_rwf || 0).toLocaleString()}</td>
+      <td style="color:var(--green);font-weight:700;font-family:var(--mono);">${Math.round(m.yield_rwf || 0).toLocaleString()} RWF</td>
       <td><button class="btn-mini" onclick="removeMember('${m.id}')"
             style="color:var(--red);border-color:var(--red-pale);background:rgba(255,100,100,0.1);"
             aria-label="Remove ${m.name}">Delete</button></td>`;

@@ -888,7 +888,7 @@
 
       <!-- SUB-VIEW 4: GRASSROOTS KINYARWANDA SMS GATEWAY -->
       <div id="imp-sms-view" style="display:none;">
-        <div class="card glass" style="border-left:4px solid var(--green); padding:24px;">
+        <div id="sms-gateway-card" class="card glass" style="border-left:4px solid var(--green); padding:24px;">
           <div class="sec-label" style="color:var(--green); margin-bottom:16px;">
             <i class="fa-solid fa-mobile-screen-button"></i> Grassroots Delivery Gateway · Telefoni ya Muri Kirehe
             (Feature Phone SMS Alert)
@@ -904,15 +904,22 @@
                 Administrative Sector</div>
               <select id="sms-sector-select" class="reg-input" onchange="updateSmsPreview()"
                 style="margin-bottom:16px;">
-                <option value="Mahama">Mahama Sector (Extreme Risk - 76.5%)</option>
-                <option value="Mpanga">Mpanga Sector (Extreme Risk - 71.2%)</option>
-                <option value="Nasho">Nasho Sector (Stabilized Pivot Zone)</option>
-                <option value="Nyamugari">Nyamugari Sector (65.5% High Risk)</option>
-                <option value="Gatore">Gatore Sector (Resilient Baseline Zone)</option>
+                <option value="Mahama">Mahama Sector (Extreme Risk - 73.9%)</option>
+                <option value="Mpanga">Mpanga Sector (Extreme Risk - 68.2%)</option>
+                <option value="Nyarubuye">Nyarubuye Sector (High Risk - 65.2%)</option>
+                <option value="Nyamugari">Nyamugari Sector (High Risk - 60.9%)</option>
+                <option value="Gahara">Gahara Sector (High Risk - 58.7%)</option>
+                <option value="Musaza">Musaza Sector (Moderate Risk - 47.8%)</option>
+                <option value="Mushikiri">Mushikiri Sector (Moderate Risk - 41.3%)</option>
+                <option value="Kigina">Kigina Sector (Moderate Risk - 39.1%)</option>
+                <option value="Kigarama">Kigarama Sector (Moderate Risk - 34.8%)</option>
+                <option value="Kirehe">Kirehe Sector (Resilient Zone - 30.4%)</option>
+                <option value="Nasho">Nasho Sector (Stabilized Pivot Zone - 28.5%)</option>
+                <option value="Gatore">Gatore Sector (Resilient Baseline Zone - 21.7%)</option>
               </select>
               <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
                 <span style="font-size:11px; color:var(--ink-soft);">Simulated Vulnerability:</span>
-                <span id="sms-risk-badge" class="ptag pt-hi">EXTREME RISK (76.5%)</span>
+                <span id="sms-risk-badge" class="ptag pt-hi">EXTREME RISK (73.9%)</span>
               </div>
               <button class="btn btn-g" onclick="simulateSmsDispatch()" style="width:100%; font-size:12px;">
                 <i class="fa-solid fa-paper-plane"></i> Broadcast Early Warning SMS
