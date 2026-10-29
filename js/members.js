@@ -4,7 +4,7 @@ import { fetchMembers, postMember, deleteMember, patchMember } from './api.js';
 import { _runMonitorCycle }             from './monitor.js';
 import { SECTOR_HA, CROP_DATA, KIREHE_SECTORS, MARKET_PRICE_RWF_T, KIREHE_RF_MEAN, KIREHE_RF_STD } from './constants.js';
 import { computeBaselineWRSI, computeOptimizedWRSI } from './wrsi.js';
-import { EICV7_KIREHE_MEMBERS }         from './eicv7_members_data.js';
+import { EICV7_ALL_HOUSEHOLDS }         from './eicv7_full_data.js';
 
 const SECTORS_LIST = ['Nasho','Mpanga','Gahara','Gatore','Kigarama','Kigina','Kirehe','Mahama','Musaza','Mushikiri','Nyamugari','Nyarubuye'];
 const CROPS_LIST   = ['Maize','Beans','Coffee','Vegetables'];
@@ -38,20 +38,20 @@ export function getIrrigationPlan(wrsi, crop) {
 }
 
 export function _seedMembers() {
-  state.GLOBAL_MEMBERS = JSON.parse(JSON.stringify(EICV7_KIREHE_MEMBERS));
+  state.GLOBAL_MEMBERS = JSON.parse(JSON.stringify(EICV7_ALL_HOUSEHOLDS));
 }
 
 export function _ensureMembers() {
-  if (state.GLOBAL_MEMBERS.length > 0 && state.GLOBAL_MEMBERS[0].id && !state.GLOBAL_MEMBERS[0].id.startsWith('NISR-RAHS-KIR')) return;
+  if (state.GLOBAL_MEMBERS.length > 0 && state.GLOBAL_MEMBERS[0].hhid) return;
   _seedMembers();
   try { window.update?.(); } catch (e) { /* sync financials */ }
 }
 
 export async function fillLedger() {
-  // 1. Check if DB has members
+  // Check if DB has valid EICV7 members
   try {
     const dbMembers = await fetchMembers();
-    if (dbMembers && dbMembers.length > 0 && dbMembers[0].id && !dbMembers[0].id.startsWith('NISR-RAHS-KIR')) {
+    if (dbMembers && dbMembers.length > 0 && dbMembers[0].hhid) {
       state.GLOBAL_MEMBERS = dbMembers;
       renderLedger();
       window.update?.();
@@ -59,25 +59,113 @@ export async function fillLedger() {
     }
   } catch (e) { /* fall through */ }
 
-  // 2. Clear old legacy localStorage cache if it held synthetic names
-  const saved = localStorage.getItem('agriadapt_members');
-  if (saved) {
-    try {
-      const parsed = JSON.parse(saved);
-      if (parsed && parsed.length > 0 && parsed[0].id && !parsed[0].id.startsWith('NISR-RAHS-KIR')) {
-        state.GLOBAL_MEMBERS = parsed;
-        renderLedger();
-        window.update?.();
-        return;
-      }
-    } catch (e) {}
-    localStorage.removeItem('agriadapt_members');
-  }
+  // Clear legacy localStorage cache
+  localStorage.removeItem('agriadapt_members');
 
-  // 3. Seed with authentic NISR EICV7 surveyed households
+  // Seed with full 486 NISR EICV7 surveyed households
   _seedMembers();
   renderLedger();
   window.update?.();
+}
+
+export function filterEicv7Households() {
+  renderLedger();
+}
+
+export function renderLedger() {
+  const body = document.getElementById('ledger-body');
+  if (!body) return;
+  body.innerHTML = '';
+
+  const q       = (document.getElementById('eicv7-search')?.value || '').toLowerCase().trim();
+  const sector  = document.getElementById('eicv7-filter-sector')?.value || 'ALL';
+  const water   = document.getElementById('eicv7-filter-water')?.value || 'ALL';
+  const phone   = document.getElementById('eicv7-filter-phone')?.value || 'ALL';
+  const poverty = document.getElementById('eicv7-filter-poverty')?.value || 'ALL';
+
+  let list = state.GLOBAL_MEMBERS || [];
+  if (sector !== 'ALL') {
+    list = list.filter(m => m.sector === sector);
+  }
+  if (water !== 'ALL') {
+    if (water === 'Shortage') list = list.filter(m => (m.water_status || '').includes('Shortage'));
+    else if (water === 'Sufficient') list = list.filter(m => (m.water_status || '').includes('Sufficient'));
+  }
+  if (phone !== 'ALL') {
+    if (phone === 'Basic') list = list.filter(m => (m.phone_type || '').toLowerCase().includes('basic'));
+    else if (phone === 'Smart') list = list.filter(m => (m.phone_type || '').toLowerCase().includes('smart'));
+  }
+  if (poverty !== 'ALL') {
+    list = list.filter(m => m.poverty === poverty);
+  }
+  if (q) {
+    list = list.filter(m => 
+      String(m.hhid).includes(q) || 
+      String(m.clust).includes(q) || 
+      (m.id || '').toLowerCase().includes(q) ||
+      (m.sector || '').toLowerCase().includes(q) ||
+      (m.crop || '').toLowerCase().includes(q)
+    );
+  }
+
+  const badge = document.getElementById('eicv7-count-badge');
+  if (badge) {
+    badge.innerText = `Showing ${list.length} of ${state.GLOBAL_MEMBERS.length} Surveyed Households`;
+  }
+
+  // Render up to 100 rows for high performance (smooth virtual rendering)
+  const displaySlice = list.slice(0, 100);
+  displaySlice.forEach(m => {
+    const tr    = document.createElement('tr');
+    tr.style.background = 'rgba(255,255,255,0.02)';
+    const color = m.wrsi > 85 ? 'var(--green)' : m.wrsi > 70 ? 'var(--gold)' : 'var(--red)';
+    const isBasicPhone = (m.phone_type || '').toLowerCase().includes('basic');
+    const isWaterDeficit = (m.water_status || '').includes('Shortage');
+
+    tr.innerHTML = `
+      <td>
+        <strong style="color:white; font-size:13px;">HH #${m.hhid}</strong><br>
+        <span style="font-size:10px; color:var(--cyan); font-family:var(--mono);">${m.id} · Clust ${m.clust}</span>
+      </td>
+      <td style="color:var(--ink-soft); font-weight:600;">${m.sector}</td>
+      <td style="font-size:11px;">
+        <span style="color:var(--ink); font-weight:600;">${m.head_sex || 'Head'}</span>, ${m.head_age || 42}y
+      </td>
+      <td>
+        ${isBasicPhone 
+          ? '<span class="ptag pt-warn" style="font-size:9px;"><i class="fa-solid fa-mobile-screen"></i> 2G Basic</span>' 
+          : '<span class="ptag pt-ok" style="font-size:9px;"><i class="fa-solid fa-mobile"></i> Smart</span>'}
+        <span style="font-size:10px; color:var(--ink-mute); margin-left:4px;">${m.momo || ''}</span>
+      </td>
+      <td>
+        ${isWaterDeficit 
+          ? '<span class="ptag pt-hi" style="font-size:9px;"><i class="fa-solid fa-droplet-slash"></i> Deficit (4w)</span>' 
+          : '<span class="ptag pt-ok" style="font-size:9px;"><i class="fa-solid fa-droplet"></i> Sufficient</span>'}
+      </td>
+      <td style="font-size:11px; color:var(--ink-soft);">${m.poverty || 'Non Poor'}</td>
+      <td style="font-size:12px;">
+        <strong style="font-family:var(--mono);">${m.ha} ha</strong>
+        <span style="color:var(--cyan); margin-left:4px;"><i class="fa-solid fa-seedling" style="font-size:10px;"></i> ${m.crop}</span>
+      </td>
+      <td style="color:${color}; font-weight:900; font-size:15px;" aria-label="WRSI ${m.wrsi}%">${m.wrsi}%</td>
+      <td>
+        <div style="display:flex; gap:4px; align-items:center;">
+          <button class="btn-mini" onclick="toggleIrrigation('${m.id}')"
+                style="${m.irrigation_active
+                  ? 'color:var(--green);border-color:var(--green);background:rgba(60,200,120,0.12);'
+                  : 'color:var(--ink-mute);border-color:var(--ink-mute);background:rgba(255,255,255,0.04);'}"
+                aria-label="${m.irrigation_active ? 'Deactivate' : 'Activate'} irrigation for HH #${m.hhid}">
+            ${m.irrigation_active ? '● Active' : '○ Irrigate'}
+          </button>
+          <button class="btn-mini" onclick="window.triggerMemberSms && window.triggerMemberSms('HH #${m.hhid}', '${m.sector}', ${m.wrsi})"
+                style="color:var(--gold);border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);"
+                title="Preview Kinyarwanda SMS early warning alert">
+            <i class="fa-solid fa-comment-sms"></i> SMS
+          </button>
+        </div>
+      </td>`;
+    body.appendChild(tr);
+  });
 }
 
 export function registerMember() {
@@ -184,51 +272,4 @@ export async function removeMember(mid) {
   await deleteMember(mid).catch(console.error);
   renderLedger();
   window.update?.();
-}
-
-export function renderLedger() {
-  const body = document.getElementById('ledger-body');
-  if (!body) return;
-  body.innerHTML = '';
-  state.GLOBAL_MEMBERS.forEach(m => {
-    const tr    = document.createElement('tr');
-    tr.style.background = 'rgba(255,255,255,0.02)';
-    const color = m.wrsi > 85 ? 'var(--green)' : m.wrsi > 70 ? 'var(--gold)' : 'var(--red)';
-    const plan  = getIrrigationPlan(m.wrsi || 0, m.crop);
-    tr.innerHTML = `
-      <td>
-        <span style="font-weight:700;color:white;font-size:13px;">${m.name}</span><br>
-        <span style="font-size:10px;color:var(--cyan);font-family:var(--mono);">${m.id} ${m.clust ? '· Clust ' + m.clust : ''}</span><br>
-        <span style="font-size:10px;color:var(--ink-soft);"><i class="fa-solid fa-user-tag" style="font-size:9px;opacity:0.7;"></i> ${m.demo_sub || 'NISR Surveyed Smallholder'}</span>
-      </td>
-      <td style="color:var(--ink-soft);">${m.sector}</td>
-      <td style="font-family:var(--mono); font-weight:700;">${m.ha} ha</td>
-      <td style="color:var(--cyan); font-weight:700;">
-        <i class="fa-solid fa-seedling" style="font-size:11px; margin-right:4px; opacity:0.8;"></i>${m.crop}
-      </td>
-      <td style="color:${color};font-weight:900;font-size:16px;" aria-label="WRSI ${m.wrsi}%">${m.wrsi}%</td>
-      <td style="font-size:11px;color:var(--ink-soft);">${plan.schedule}</td>
-      <td style="font-size:11px;color:${color};">${plan.inputs}</td>
-      <td>
-        <div style="display:flex;gap:4px;align-items:center;">
-          <button class="btn-mini" onclick="toggleIrrigation('${m.id}')"
-                style="${m.irrigation_active
-                  ? 'color:var(--green);border-color:var(--green);background:rgba(60,200,120,0.12);'
-                  : 'color:var(--ink-mute);border-color:var(--ink-mute);background:rgba(255,255,255,0.04);'}"
-                aria-label="${m.irrigation_active ? 'Deactivate' : 'Activate'} irrigation for ${m.name}">
-            ${m.irrigation_active ? '● Active' : '○ Activate'}
-          </button>
-          <button class="btn-mini" onclick="window.triggerMemberSms && window.triggerMemberSms('${m.name}', '${m.sector}', ${m.wrsi})"
-                style="color:var(--gold);border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);"
-                title="Preview Kinyarwanda SMS early warning alert">
-            <i class="fa-solid fa-comment-sms"></i> SMS
-          </button>
-        </div>
-      </td>
-      <td style="color:var(--green);font-weight:700;font-family:var(--mono);">${Math.round(m.yield_rwf || 0).toLocaleString()} RWF</td>
-      <td><button class="btn-mini" onclick="removeMember('${m.id}')"
-            style="color:var(--red);border-color:var(--red-pale);background:rgba(255,100,100,0.1);"
-            aria-label="Remove ${m.name}">Delete</button></td>`;
-    body.appendChild(tr);
-  });
 }

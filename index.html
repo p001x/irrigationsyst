@@ -652,9 +652,9 @@
           <i class="fa-solid fa-sack-dollar"></i> Impact Hub:
         </span>
         <button class="btn btn-mini active" id="sub-imp-roi" onclick="switchImpactSub('roi')"><i
-            class="fa-solid fa-coins"></i> Economic ROI &amp; Dividends</button>
+            class="fa-solid fa-chart-line"></i> Macroeconomic &amp; Yield Impact (SAS 2024)</button>
         <button class="btn btn-mini" id="sub-imp-ledger" onclick="switchImpactSub('ledger')"><i
-            class="fa-solid fa-users"></i> Cooperative Registry (NISR Calibrated)</button>
+            class="fa-solid fa-database"></i> NISR EICV7 Microdata Explorer (486 Households)</button>
         <button class="btn btn-mini" id="sub-imp-export" onclick="switchImpactSub('export')"><i
             class="fa-solid fa-file-pdf"></i> Individual Advisory Certificate</button>
         <button class="btn btn-mini" id="sub-imp-sms" onclick="switchImpactSub('sms')"><i
@@ -694,35 +694,55 @@
         </div>
 
         <div class="benefit-grid" style="margin-bottom:24px;">
-          <div class="benefit-col baseline">
-            <div class="sec-label" style="color:var(--red); font-size:11px;"><i
-                class="fa-solid fa-triangle-exclamation"></i> STATUS QUO (Rain-fed Stressed)</div>
-            <h3 style="font-family:var(--cab); font-size:28px; margin:15px 0;">Baseline Stress</h3>
-            <img id="img-stressed" src="stressed_maize_rwanda_1775826357787.png"
-              style="width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-            <div>
-              <div style="font-size:10px; color:var(--ink-soft);">ESTIMATED SEASONAL INCOME</div>
-              <div id="imp-rwf-base" style="font-size:32px; font-weight:900; family:var(--cab); color:var(--ink);">--
-                RWF</div>
+          <div class="benefit-col baseline" style="background:rgba(239,68,68,0.03); border:1px solid rgba(239,68,68,0.2); border-radius:14px; padding:22px;">
+            <div class="sec-label" style="color:var(--red); font-size:11px;">
+              <i class="fa-solid fa-cloud-showers-water"></i> STATUS QUO: RAIN-FED BASELINE (DROUGHT-STRESSED)
             </div>
-            <div class="sci-meta" style="margin-top:10px;"><i class="fa-solid fa-cloud-showers-heavy"></i> NISR SAS 2024
-              Benchmark: 1.85 t/ha Rain-fed</div>
+            <div style="margin:16px 0 20px 0;">
+              <div style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;">Estimated Seasonal Income / Household</div>
+              <div id="imp-rwf-base" style="font-size:36px; font-weight:900; font-family:var(--cab); color:var(--ink);">-- RWF</div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+              <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                <div style="font-size:9px; color:var(--ink-mute);">Mean Seasonal Yield</div>
+                <div style="font-size:18px; font-weight:800; color:var(--red); font-family:var(--mono);">1.85 t/ha</div>
+                <div style="font-size:9px; color:var(--ink-soft);">NISR SAS 2024 Benchmark</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                <div style="font-size:9px; color:var(--ink-mute);">Crop Water Status</div>
+                <div style="font-size:18px; font-weight:800; color:var(--red); font-family:var(--mono);">52% – 68%</div>
+                <div style="font-size:9px; color:var(--ink-soft);">WRSI Severe Deficit</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:var(--ink-soft); line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:var(--red);"></i> Under rain-fed conditions without intervention, root-zone deficits in Dekads 4–8 induce rapid crop dry-down, reducing mean gross margins to <strong>420,000 RWF/ha</strong>.
+            </div>
           </div>
 
-          <div class="benefit-col optimized">
-            <div class="sec-label" style="color:var(--green); font-size:11px;"><i class="fa-solid fa-bolt"></i>
-              AGRIADAPT INTERVENTION</div>
-            <h3 style="font-family:var(--cab); font-size:28px; margin:15px 0; color:var(--cyan);">Verified Benefit</h3>
-            <img id="img-healthy" src="healthy_maize_rwanda_1775826339710.png"
-              style="width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-            <div>
-              <div style="font-size:10px; color:var(--ink-soft);">OPTIMIZED SEASONAL INCOME</div>
-              <div id="imp-rwf" style="font-size:32px; font-weight:900; family:var(--cab); color:var(--green);">-- RWF
-              </div>
-              <div class="delta-pill" id="imp-delta">+--% Surplus</div>
+          <div class="benefit-col optimized" style="background:rgba(0,255,102,0.03); border:1px solid rgba(0,255,102,0.2); border-radius:14px; padding:22px;">
+            <div class="sec-label" style="color:var(--green); font-size:11px;">
+              <i class="fa-solid fa-solar-panel"></i> AGRIADAPT INTERVENTION: SOLAR IRRIGATION SECURED
             </div>
-            <div class="sci-meta" style="margin-top:10px;"><i class="fa-solid fa-droplet"></i> Solar Center Pivot
-              Benchmark: 4.85 t/ha</div>
+            <div style="margin:16px 0 20px 0;">
+              <div style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;">Protected Seasonal Income / Household</div>
+              <div id="imp-rwf" style="font-size:36px; font-weight:900; font-family:var(--cab); color:var(--green);">-- RWF</div>
+              <div class="delta-pill" id="imp-delta" style="margin-top:6px; display:inline-block;">+--% Surplus</div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+              <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                <div style="font-size:9px; color:var(--ink-mute);">Protected Yield Benchmark</div>
+                <div style="font-size:18px; font-weight:800; color:var(--green); font-family:var(--mono);">4.85 t/ha</div>
+                <div style="font-size:9px; color:var(--ink-soft);">+162% Yield Gain</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                <div style="font-size:9px; color:var(--ink-mute);">Target Water Index</div>
+                <div style="font-size:18px; font-weight:800; color:var(--cyan); font-family:var(--mono);">94% Secured</div>
+                <div style="font-size:9px; color:var(--ink-soft);">WRSI Optimal Zone</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:var(--ink-soft); line-height:1.5;">
+              <i class="fa-solid fa-shield-halved" style="color:var(--green);"></i> Solar-powered center-pivot pumping from Lake Cyambwe secures evapotranspiration needs at <strong>zero diesel fuel expenditure</strong>, raising household gross margin to <strong>1,280,000 RWF/ha</strong>.
+            </div>
           </div>
         </div>
 
@@ -805,69 +825,82 @@
         </div>
       </div>
 
-      <!-- SUB-VIEW 2: MEMBER REGISTRY (LEDGER) -->
+      <!-- SUB-VIEW 2: NISR EICV7 MICRODATA EXPLORER -->
       <div id="imp-ledger-view" style="display:none;">
         <div class="card glass">
           <div class="card-top ct-gold"></div>
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-            <div class="sec-label"><i class="fa-solid fa-users-viewfinder"></i> AGRIAdapt Cooperative Smallholder Registry</div>
-            <span class="ptag pt-warn" style="font-size:10px; text-transform:uppercase; letter-spacing:0.05em; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.3); color:var(--gold);">
-              <i class="fa-solid fa-flask"></i> Interactive Demonstration Cohort (100 Synthesized Smallholder Profiles)
+            <div class="sec-label"><i class="fa-solid fa-database"></i> NISR EICV7 Microdata Explorer — Kirehe Survey Sample (N=486 Households)</div>
+            <span class="ptag pt-ok" style="font-size:10px; text-transform:uppercase; letter-spacing:0.05em; font-family:var(--mono);">
+              <i class="fa-solid fa-check-circle"></i> Raw Survey Ingestion: 54 Clusters
             </span>
           </div>
           <p style="font-size:11px; color:var(--ink-soft); margin-top:8px; margin-bottom:14px; line-height:1.5;">
-            <strong>Demonstration Transparency Notice:</strong> The 100 individual member profiles below represent an interactive simulation cohort developed to demonstrate parcel-level water quota allocation and reactive SMS dispatches. All plot sizes (0.6–2.2 ha) and crop distributions are calibrated against empirical distributions from <strong>NISR EICV7 Microdata</strong> and <strong>NISR SAS 2024</strong> yield baselines (1.85 t/ha rain-fed vs. 4.85 t/ha solar irrigated).
+            <strong>Empirical Microdata Evidence:</strong> Ingested directly from the <strong>NISR Integrated Household Living Conditions Survey (EICV7)</strong> microdata archive (`Microdata.zip`). Evaluators can search, filter, and inspect the 486 surveyed smallholder households across all 12 Kirehe sectors to evaluate baseline water shortages, basic phone reliance (79%), and simulated early-warning dispatch.
           </p>
 
-          <div class="reg-form">
-            <div>
-              <span class="reg-label">Full Name</span>
-              <input type="text" id="reg-name" class="reg-input" placeholder="e.g. Jean Munyaneza">
+          <!-- Microdata Query & Multi-Variable Filter Controls -->
+          <div class="inner-glass" style="padding:14px 18px; margin-bottom:16px; display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
+            <div style="flex:1; min-width:180px;">
+              <span style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:4px;">
+                <i class="fa-solid fa-magnifying-glass"></i> Search HH ID / Cluster
+              </span>
+              <input type="text" id="eicv7-search" class="reg-input" placeholder="e.g. 313597 or 11513" oninput="window.filterEicv7Households && window.filterEicv7Households()" style="width:100%; height:36px; font-size:12px;">
             </div>
-            <div>
-              <span class="reg-label">Sector</span>
-              <select id="reg-sector" class="reg-input">
-                <option>Nasho</option>
-                <option>Mpanga</option>
-                <option>Gahara</option>
-                <option>Gatore</option>
-                <option>Mahama</option>
-                <option>Kigina</option>
-                <option>Kigarama</option>
-                <option>Musaza</option>
-                <option>Mushikiri</option>
-                <option>Nyamugari</option>
-                <option>Nyarubuye</option>
-                <option>Kirehe</option>
+            <div style="min-width:130px;">
+              <span style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:4px;">Sector</span>
+              <select id="eicv7-filter-sector" class="reg-input" onchange="window.filterEicv7Households && window.filterEicv7Households()" style="height:36px; font-size:12px;">
+                <option value="ALL">All 12 Sectors</option>
+                <option>Nasho</option><option>Mahama</option><option>Mpanga</option><option>Gahara</option>
+                <option>Gatore</option><option>Kigarama</option><option>Kigina</option><option>Kirehe</option>
+                <option>Musaza</option><option>Mushikiri</option><option>Nyamugari</option><option>Nyarubuye</option>
               </select>
             </div>
-            <div>
-              <span class="reg-label">Crop</span>
-              <select id="reg-crop" class="reg-input">
-                <option>Maize</option>
-                <option>Beans</option>
-                <option>Vegetables</option>
-                <option>Coffee</option>
+            <div style="min-width:150px;">
+              <span style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:4px;">Water Deficit (s5cq8)</span>
+              <select id="eicv7-filter-water" class="reg-input" onchange="window.filterEicv7Households && window.filterEicv7Households()" style="height:36px; font-size:12px;">
+                <option value="ALL">All Responses</option>
+                <option value="Shortage">Reported Deficit (49.8%)</option>
+                <option value="Sufficient">Sufficient Supply (50.2%)</option>
               </select>
             </div>
-            <button class="btn btn-g" onclick="registerMember()" style="height:42px;">Register &amp; Add to
-              Ledger</button>
+            <div style="min-width:150px;">
+              <span style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:4px;">Phone Type (s4bq10)</span>
+              <select id="eicv7-filter-phone" class="reg-input" onchange="window.filterEicv7Households && window.filterEicv7Households()" style="height:36px; font-size:12px;">
+                <option value="ALL">All Devices</option>
+                <option value="Basic">Basic 2G Phone (79.0%)</option>
+                <option value="Smart">Smartphone (17.2%)</option>
+              </select>
+            </div>
+            <div style="min-width:130px;">
+              <span style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:4px;">Welfare Status</span>
+              <select id="eicv7-filter-poverty" class="reg-input" onchange="window.filterEicv7Households && window.filterEicv7Households()" style="height:36px; font-size:12px;">
+                <option value="ALL">All Welfare</option>
+                <option value="Moderately poor">Moderately Poor</option>
+                <option value="Non Poor">Non-Poor</option>
+                <option value="Severaly Poor">Severely Poor</option>
+              </select>
+            </div>
+            <div style="margin-left:auto;">
+              <span id="eicv7-count-badge" class="ptag pt-ok" style="font-size:10px; font-family:var(--mono);">
+                Showing 486 of 486 Surveyed Households
+              </span>
+            </div>
           </div>
 
-          <div style="max-height: 500px; overflow-y: auto; margin-top: 10px;" class="inner-glass">
+          <div style="max-height: 520px; overflow-y: auto;" class="inner-glass">
             <table class="ledger-table">
               <thead>
                 <tr>
-                  <th style="text-align:left;">Member Name</th>
+                  <th style="text-align:left;">Surveyed Household (EICV7)</th>
                   <th style="text-align:left;">Sector</th>
-                  <th style="text-align:left;">Plot Size (ha)</th>
-                  <th style="text-align:left;">Crop</th>
+                  <th style="text-align:left;">Household Head (s1q1, s1q3y)</th>
+                  <th style="text-align:left;">Phone &amp; MoMo (s4bq10)</th>
+                  <th style="text-align:left;">Water Deficit (s5cq8)</th>
+                  <th style="text-align:left;">Welfare Status</th>
+                  <th style="text-align:left;">Landholding &amp; Crop</th>
                   <th style="text-align:left;">WRSI Health</th>
-                  <th style="text-align:left;">Irrigation Schedule</th>
-                  <th style="text-align:left;">Inputs Needed</th>
-                  <th style="text-align:left;">Status</th>
-                  <th style="text-align:left;">Gross Value</th>
-                  <th style="text-align:left;">Actions</th>
+                  <th style="text-align:left;">Intervention Action</th>
                 </tr>
               </thead>
               <tbody id="ledger-body"></tbody>

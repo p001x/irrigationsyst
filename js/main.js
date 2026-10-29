@@ -12,7 +12,7 @@ import {
 } from './ui.js';
 import {
   fillLedger, renderLedger, addMember, removeMember, registerMember,
-  _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation,
+  _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation, filterEicv7Households,
 } from './members.js';
 import {
   initLeafletMap, detectSectorFromCoord, saveStudyToLedger,
@@ -77,7 +77,7 @@ Object.assign(window, {
   loadScenario, toggleLowBandwidth,
   // Members
   fillLedger, renderLedger, addMember, removeMember, registerMember,
-  _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation,
+  _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation, filterEicv7Households,
   // Map
   initLeafletMap, detectSectorFromCoord, saveStudyToLedger,
   cancelStudy, handleMapUpload, getActiveStudyBounds,
