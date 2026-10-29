@@ -33,20 +33,21 @@ export const CROP_DATA = {
   Vegetables: { weight: 1.3, yield: 8.50 },
 };
 
-// 12 Administrative Sectors of Kirehe District (NISR Census 2022 Population & GAUL Centroids)
+// 12 Administrative Sectors of Kirehe District (Official NISR Census 2022 Population & FAO GAUL Centroids)
+// Calibrated strictly with data/nisr_kirehe_sector_baselines.json (Total District Population: 460,860)
 export const KIREHE_SECTORS = [
-  { n: 'Nasho', c: [-2.08, 30.73], fert: 1.15, pop: 32450, risk: 'High (55.4%)' },
-  { n: 'Mpanga', c: [-2.25, 30.78], fert: 0.95, pop: 39120, risk: 'Extreme (71.2%)' },
-  { n: 'Gahara', c: [-2.35, 30.60], fert: 0.85, pop: 44210, risk: 'Moderate (36.8%)' },
-  { n: 'Gatore', c: [-2.25, 30.55], fert: 1.05, pop: 48930, risk: 'Resilient (22.1%)' },
-  { n: 'Kigarama', c: [-2.15, 30.52], fert: 0.90, pop: 38100, risk: 'High (48.2%)' },
-  { n: 'Kigina', c: [-2.18, 30.68], fert: 1.00, pop: 33450, risk: 'Moderate (27.4%)' },
-  { n: 'Mahama', c: [-2.32, 30.85], fert: 0.80, pop: 112400, risk: 'Extreme (76.5%)' }, // includes refugee settlement zone
-  { n: 'Musaza', c: [-2.28, 30.92], fert: 0.85, pop: 36720, risk: 'Moderate (31.5%)' },
-  { n: 'Mushikiri', c: [-2.12, 30.62], fert: 1.10, pop: 31200, risk: 'Resilient (17.6%)' },
-  { n: 'Nyamugari', c: [-2.15, 30.85], fert: 0.95, pop: 41800, risk: 'Extreme (65.5%)' },
-  { n: 'Nyarubuye', c: [-2.22, 30.82], fert: 0.90, pop: 28900, risk: 'High (44.1%)' },
-  { n: 'Kirehe', c: [-2.27, 30.65], fert: 1.00, pop: 34100, risk: 'Resilient (18.0%)' },
+  { n: 'Nasho',     c: [-2.08, 30.73], fert: 1.15, pop: 32840, risk: 'Moderate (28.5%)' },
+  { n: 'Mpanga',    c: [-2.25, 30.78], fert: 0.95, pop: 44120, risk: 'High (68.2%)' },
+  { n: 'Gahara',    c: [-2.35, 30.60], fert: 0.85, pop: 42890, risk: 'High (58.7%)' },
+  { n: 'Gatore',    c: [-2.25, 30.55], fert: 1.05, pop: 38740, risk: 'Low-to-Moderate (21.7%)' },
+  { n: 'Kigarama',  c: [-2.15, 30.52], fert: 0.90, pop: 37620, risk: 'Moderate (34.8%)' },
+  { n: 'Kigina',    c: [-2.18, 30.68], fert: 1.00, pop: 35410, risk: 'Moderate (39.1%)' },
+  { n: 'Mahama',    c: [-2.32, 30.85], fert: 0.80, pop: 61250, risk: 'Severe (73.9%)' },
+  { n: 'Musaza',    c: [-2.28, 30.92], fert: 0.85, pop: 36190, risk: 'Moderate-to-High (47.8%)' },
+  { n: 'Mushikiri', c: [-2.12, 30.62], fert: 1.10, pop: 33910, risk: 'Moderate (41.3%)' },
+  { n: 'Nyamugari', c: [-2.15, 30.85], fert: 0.95, pop: 31440, risk: 'High (60.9%)' },
+  { n: 'Nyarubuye', c: [-2.22, 30.82], fert: 0.90, pop: 26690, risk: 'High (65.2%)' },
+  { n: 'Kirehe',    c: [-2.27, 30.65], fert: 1.00, pop: 39850, risk: 'Moderate (30.4%)' },
 ];
 
 // Average smallholder holding size per sector (NISR RAHS 2024 calibrated)
