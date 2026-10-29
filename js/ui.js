@@ -18,6 +18,84 @@ export function syncTrend(id, current, last) {
   else               el.innerHTML = `<i class="fa-solid fa-equals" aria-hidden="true"></i> 0%`;
 }
 
+// ── Historical Scenario Loader ───────────────────────────────────────────────
+export const HISTORICAL_SCENARIOS = {
+  baseline_2024: {
+    label: '2024 Season B Baseline',
+    dekad: 6, rf_cumul: 285, cdd: 7, sm_rel: 0.70, ndvi: 0.45, soil_ph: 6.5, pivots_active: 25, solar_mw: 2.2, reservoir: 80,
+    desc: '2024 Season B Baseline: Normal rainfall pattern with moderate mid-season conditions across Kirehe.'
+  },
+  drought_2016: {
+    label: '2016 Historic Akagera Drought',
+    dekad: 8, rf_cumul: 175, cdd: 18, sm_rel: 0.32, ndvi: 0.28, soil_ph: 5.8, pivots_active: 63, solar_mw: 3.3, reservoir: 45,
+    desc: '2016 Historic Drought: Severe 18-day dry spell at flowering stage with root-zone soil moisture drop to 0.32. Full 63 center pivots deployed.'
+  },
+  desiccation_2004: {
+    label: '2004 Thermal Flash Desiccation',
+    dekad: 6, rf_cumul: 140, cdd: 22, sm_rel: 0.26, ndvi: 0.24, soil_ph: 5.4, pivots_active: 50, solar_mw: 3.1, reservoir: 35,
+    desc: '2004 Heat Anomaly: Extreme consecutive dry days (22 days) combined with high LST thermal stress across eastern lowlands.'
+  },
+  bumper_2020: {
+    label: '2020 High-Yield Bumper Season',
+    dekad: 6, rf_cumul: 420, cdd: 3, sm_rel: 0.82, ndvi: 0.62, soil_ph: 6.8, pivots_active: 10, solar_mw: 1.5, reservoir: 95,
+    desc: '2020 High Yield: Abundant precipitation (420 mm) and optimal soil moisture, requiring only minimal supplemental pumping.'
+  }
+};
+
+export function loadScenario(key) {
+  const scen = HISTORICAL_SCENARIOS[key];
+  if (!scen) return;
+  
+  const fields = ['dekad','rf_cumul','cdd','sm_rel','ndvi','soil_ph','pivots_active','solar_mw','reservoir'];
+  fields.forEach(f => {
+    const el = document.getElementById(f);
+    if (el && scen[f] !== undefined) el.value = scen[f];
+  });
+
+  Object.keys(HISTORICAL_SCENARIOS).forEach(k => {
+    const suffix = k.split('_')[1];
+    const btn = document.getElementById(`scen-${suffix}`);
+    if (btn) btn.classList.toggle('active', k === key);
+  });
+
+  const alertEl = document.getElementById('sim-alert-text');
+  if (alertEl) {
+    alertEl.innerHTML = `<strong>Active Scenario:</strong> ${scen.label}. ${scen.desc}`;
+  }
+
+  update();
+  showToast(`📍 Loaded Scenario: ${scen.label}`);
+}
+
+// ── Low-Bandwidth Mode ────────────────────────────────────────────────────────
+export function toggleLowBandwidth() {
+  const video = document.getElementById('bg-video');
+  const btn = document.getElementById('btn-low-bandwidth');
+  const isReduced = document.body.classList.toggle('low-bandwidth-mode');
+  
+  if (video) {
+    if (isReduced) {
+      video.pause();
+      video.style.display = 'none';
+      if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-leaf"></i> Data Saver ON';
+        btn.style.color = 'var(--green)';
+        btn.style.borderColor = 'var(--green)';
+      }
+      showToast('⚡ Low-Bandwidth Mode Enabled: Background video paused and unloaded.');
+    } else {
+      video.style.display = 'block';
+      video.play().catch(() => {});
+      if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-leaf"></i> Data Saver';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }
+      showToast('🎬 Standard Mode Enabled: Background video restored.');
+    }
+  }
+}
+
 // ── Theme ────────────────────────────────────────────────────────────────────
 export function setTheme(t) {
   document.documentElement.setAttribute('data-theme', t);

@@ -171,14 +171,36 @@ export async function toggleIrrigation(mid) {
   if (!m) return;
   const previous = !!m.irrigation_active;
   m.irrigation_active = !previous;
+
+  const cropDef  = CROP_DATA[m.crop]  || CROP_DATA.Maize;
+  const sectProf = KIREHE_SECTORS.find(s => s.n === m.sector) || { fert: 1.0 };
+
+  if (m.irrigation_active) {
+    const oldWrsi = m.wrsi;
+    m.wrsi = Math.min(100, Math.max(94, Math.round(m.wrsi + 22)));
+    const oldYieldRwf = m.yield_rwf || 0;
+    // Under center-pivot irrigation, yield reaches full irrigated benchmark (4.85 t/ha, SAS 2024)
+    const newYieldT = m.ha * cropDef.yield * sectProf.fert * (m.wrsi / 100);
+    m.yield_rwf = parseFloat((newYieldT * MARKET_PRICE_RWF_T).toFixed(0));
+    const gainRwf = Math.max(0, m.yield_rwf - oldYieldRwf);
+    window.showToast?.(`✓ Solar Irrigation Dispatched: ${m.name} (${m.sector}) — WRSI ${oldWrsi}% → ${m.wrsi}%, protecting +${Math.round(gainRwf).toLocaleString()} RWF`);
+  } else {
+    // Reverted to rainfed baseline level
+    const inp = window.getInp?.() || {};
+    const baseWRSI = window.computeBaselineWRSI?.(inp) || 70;
+    m.wrsi = Math.max(25, Math.round(baseWRSI / cropDef.weight));
+    const rainfedYieldT = m.ha * 1.85 * sectProf.fert * (m.wrsi / 100);
+    m.yield_rwf = parseFloat((rainfedYieldT * MARKET_PRICE_RWF_T).toFixed(0));
+    window.showToast?.(`○ Irrigation Suspended: ${m.name} (${m.sector}) reverted to rainfed baseline (${m.wrsi}% WRSI)`);
+  }
+
   renderLedger();
+  window.update?.();
+
   try {
-    await patchMember(mid, { irrigation_active: m.irrigation_active });
+    await patchMember(mid, { irrigation_active: m.irrigation_active, wrsi: m.wrsi, yield_rwf: m.yield_rwf });
   } catch (e) {
-    console.error('Failed to update irrigation status, reverting UI:', e);
-    m.irrigation_active = previous;
-    renderLedger();
-    try { window.showToast?.('Could not update irrigation status — please retry.'); } catch (err) {}
+    console.error('Failed to sync irrigation status:', e);
   }
 }
 

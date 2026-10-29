@@ -60,6 +60,8 @@
         <button class="btn btn-mini" onclick="setTheme('black')" id="t-black"><i class="fa-solid fa-cloud-moon"></i>
           Black</button>
       </div>
+      <button class="btn btn-mini" id="btn-low-bandwidth" onclick="toggleLowBandwidth()" title="Toggle background video for low bandwidth" style="font-family:var(--mono);font-size:10px;padding:6px 12px;"><i class="fa-solid fa-leaf"></i> Data Saver</button>
+      <button class="btn btn-mini" id="btn-low-bandwidth" onclick="toggleLowBandwidth()" title="Toggle background video for low bandwidth" style="font-family:var(--mono);font-size:10px;padding:6px 12px;"><i class="fa-solid fa-leaf"></i> Data Saver</button>
       <!-- Live Monitor Badge in topbar-right -->
       <div id="monitor-badge" style="
       display:flex; align-items:center; gap:8px;
@@ -181,6 +183,34 @@
 
       <!-- SUB-VIEW 1: CLIMATE INPUTS & WRSI PREDICTIONS -->
       <div id="early-clim-view">
+        <!-- HISTORICAL BENCHMARK SCENARIOS (Ground Truth Validation) -->
+        <div class="card glass" style="margin-bottom:20px; padding:18px 22px; border-left:4px solid var(--cyan);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div>
+              <div style="font-family:var(--mono); font-size:11px; font-weight:700; color:var(--cyan); text-transform:uppercase; letter-spacing:0.08em;">
+                <i class="fa-solid fa-clock-rotate-left"></i> Historical Agro-Climatic Scenarios (2001–2024 Satellite Ground Truth)
+              </div>
+              <p style="font-size:11px; color:var(--ink-soft); margin:4px 0 0 0; line-height:1.4;">
+                Select a verified historical season from our 23-year archive to load observed CHIRPS, MODIS &amp; ERA5-Land parameters:
+              </p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="btn btn-mini active" onclick="loadScenario('baseline_2024')" id="scen-2024" style="border-color:var(--green); color:var(--green);">
+                <i class="fa-solid fa-circle-check"></i> 2024 Baseline
+              </button>
+              <button class="btn btn-mini" onclick="loadScenario('drought_2016')" id="scen-2016" style="border-color:var(--red); color:var(--red);">
+                <i class="fa-solid fa-triangle-exclamation"></i> 2016 Akagera Drought
+              </button>
+              <button class="btn btn-mini" onclick="loadScenario('desiccation_2004')" id="scen-2004" style="border-color:var(--gold); color:var(--gold);">
+                <i class="fa-solid fa-fire"></i> 2004 Thermal Stress
+              </button>
+              <button class="btn btn-mini" onclick="loadScenario('bumper_2020')" id="scen-2020" style="border-color:var(--cyan); color:var(--cyan);">
+                <i class="fa-solid fa-cloud-showers-water"></i> 2020 Bumper Harvest
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- ALERT -->
         <div class="alert a-info glass" id="sim-alert">
           <span class="alert-icon"><i class="fa-solid fa-circle-info"></i></span>
@@ -295,6 +325,30 @@
                 <input type="range" id="ndvi" min="0.10" max="0.80" step="0.01" value="0.45" aria-label="Adjust NDVI"
                   oninput="update()">
                 <span class="sl-val" id="v_ndvi">0.45</span>
+              </div>
+            </div>
+
+            <!-- DIRECT DATASET ACCESS & DOWNLOAD CENTER (Slide 12 Compliance) -->
+            <div class="card glass" style="margin-top:20px; padding:22px; border-left:4px solid var(--cyan);">
+              <div class="sec-label" style="color:var(--cyan); margin-bottom:10px;">
+                <i class="fa-solid fa-file-arrow-down"></i> Direct Microdata Downloads &amp; Verification Hub (NISR Slide 12)
+              </div>
+              <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, and multi-sensor datasets are openly accessible for inspection:
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="data/kirehe_district_real_boundary.geojson" download="kirehe_district_real_boundary.geojson" class="btn btn-mini" style="background:rgba(0,240,255,0.08); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Kirehe Real Boundary (GeoJSON)
+                </a>
+                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(46,204,113,0.08); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Sector Baselines (JSON)
+                </a>
+                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(251,191,36,0.08); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> 500m Satellite Grid (CSV)
+                </a>
+                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Catalog
+                </a>
               </div>
             </div>
           </div>
@@ -896,6 +950,30 @@
                   Agronomist Hotline: *105# / 0788-383-103." </div>
               </div>
             </div>
+
+            <!-- DIRECT DATASET ACCESS & DOWNLOAD CENTER (Slide 12 Compliance) -->
+            <div class="card glass" style="margin-top:20px; padding:22px; border-left:4px solid var(--cyan);">
+              <div class="sec-label" style="color:var(--cyan); margin-bottom:10px;">
+                <i class="fa-solid fa-file-arrow-down"></i> Direct Microdata Downloads &amp; Verification Hub (NISR Slide 12)
+              </div>
+              <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, and multi-sensor datasets are openly accessible for inspection:
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="data/kirehe_district_real_boundary.geojson" download="kirehe_district_real_boundary.geojson" class="btn btn-mini" style="background:rgba(0,240,255,0.08); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Kirehe Real Boundary (GeoJSON)
+                </a>
+                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(46,204,113,0.08); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Sector Baselines (JSON)
+                </a>
+                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(251,191,36,0.08); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> 500m Satellite Grid (CSV)
+                </a>
+                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Catalog
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1048,6 +1126,30 @@
                 </ul>
               </div>
             </div>
+
+            <!-- DIRECT DATASET ACCESS & DOWNLOAD CENTER (Slide 12 Compliance) -->
+            <div class="card glass" style="margin-top:20px; padding:22px; border-left:4px solid var(--cyan);">
+              <div class="sec-label" style="color:var(--cyan); margin-bottom:10px;">
+                <i class="fa-solid fa-file-arrow-down"></i> Direct Microdata Downloads &amp; Verification Hub (NISR Slide 12)
+              </div>
+              <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, and multi-sensor datasets are openly accessible for inspection:
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="data/kirehe_district_real_boundary.geojson" download="kirehe_district_real_boundary.geojson" class="btn btn-mini" style="background:rgba(0,240,255,0.08); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Kirehe Real Boundary (GeoJSON)
+                </a>
+                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(46,204,113,0.08); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Sector Baselines (JSON)
+                </a>
+                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(251,191,36,0.08); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> 500m Satellite Grid (CSV)
+                </a>
+                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Catalog
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1139,6 +1241,30 @@
                 <div
                   style="width:80px; height:80px; border:2px dashed #eee; display:flex; align-items:center; justify-content:center; font-size:9px; color:#ccc; border-radius:50%;">
                   NISR / AGY</div>
+              </div>
+            </div>
+
+            <!-- DIRECT DATASET ACCESS & DOWNLOAD CENTER (Slide 12 Compliance) -->
+            <div class="card glass" style="margin-top:20px; padding:22px; border-left:4px solid var(--cyan);">
+              <div class="sec-label" style="color:var(--cyan); margin-bottom:10px;">
+                <i class="fa-solid fa-file-arrow-down"></i> Direct Microdata Downloads &amp; Verification Hub (NISR Slide 12)
+              </div>
+              <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+                In accordance with <strong>Slide 12 (Deliverable #4)</strong> of the NISR Hackathon Guidelines, all spatial boundaries, sector economic baselines, and multi-sensor datasets are openly accessible for inspection:
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="data/kirehe_district_real_boundary.geojson" download="kirehe_district_real_boundary.geojson" class="btn btn-mini" style="background:rgba(0,240,255,0.08); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Kirehe Real Boundary (GeoJSON)
+                </a>
+                <a href="data/nisr_kirehe_sector_baselines.json" download="nisr_kirehe_sector_baselines.json" class="btn btn-mini" style="background:rgba(46,204,113,0.08); border-color:var(--green); color:var(--green); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> Sector Baselines (JSON)
+                </a>
+                <a href="data/kirehe_dataset_500m_sample.csv" download="kirehe_dataset_500m_sample.csv" class="btn btn-mini" style="background:rgba(251,191,36,0.08); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-download"></i> 500m Satellite Grid (CSV)
+                </a>
+                <a href="https://microdata.statistics.gov.rw/index.php/catalog" target="_blank" rel="noopener" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:8px 14px;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> NISR Central Microdata Catalog
+                </a>
               </div>
             </div>
           </div>

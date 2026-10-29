@@ -28,11 +28,17 @@ export function _runMonitorCycle() {
   state.GLOBAL_MEMBERS.forEach(m => {
     const crop     = CROP_DATA[m.crop] || CROP_DATA.Maize;
     const sProf    = KIREHE_SECTORS.find(s => s.n === m.sector) || { fert: 1.0 };
-    const mOptWrsi = Math.min(100, Math.round(optWRSI / crop.weight));
-    m.wrsi     = mOptWrsi;
-    m.yield_rwf = m.ha * crop.yield * sProf.fert * (mOptWrsi / 100) * MARKET_PRICE_RWF_T;
-    if (mOptWrsi < 70) critical++;
-    else if (mOptWrsi < 80) atRisk++;
+    if (m.irrigation_active) {
+      // Actively protected by solar center-pivot irrigation
+      m.wrsi = Math.min(100, Math.max(94, Math.round((optWRSI + 15) / crop.weight)));
+      m.yield_rwf = m.ha * crop.yield * sProf.fert * (m.wrsi / 100) * MARKET_PRICE_RWF_T;
+    } else {
+      const mOptWrsi = Math.min(100, Math.round(optWRSI / crop.weight));
+      m.wrsi     = mOptWrsi;
+      m.yield_rwf = m.ha * (crop.yield * 0.70) * sProf.fert * (mOptWrsi / 100) * MARKET_PRICE_RWF_T;
+      if (mOptWrsi < 70) critical++;
+      else if (mOptWrsi < 80) atRisk++;
+    }
   });
 
   const badge = document.getElementById('monitor-badge');

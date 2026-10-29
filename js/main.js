@@ -8,6 +8,7 @@ import {
   update, renderShap, resetEmergency, checkSpectralGating,
   updateROI, updateSectorEconomy,
   switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms,
+  loadScenario, toggleLowBandwidth,
 } from './ui.js';
 import {
   fillLedger, renderLedger, addMember, removeMember, registerMember,
@@ -73,6 +74,7 @@ Object.assign(window, {
   update, renderShap, resetEmergency, checkSpectralGating,
   updateROI, updateSectorEconomy,
   switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms,
+  loadScenario, toggleLowBandwidth,
   // Members
   fillLedger, renderLedger, addMember, removeMember, registerMember,
   _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation,
