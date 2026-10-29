@@ -140,9 +140,9 @@ export function tab(id) {
     targetTab = 'action';
   } else if (['impact', 'ledger', 'finance', 'analysis', 'export'].includes(id)) {
     targetTab = 'impact';
-    if (id === 'ledger') targetSub = 'ledger';
-    else if (id === 'export' || id === 'analysis') targetSub = 'export';
-    else targetSub = 'roi';
+    if (id === 'export' || id === 'analysis') targetSub = 'export';
+    else if (id === 'roi') targetSub = 'roi';
+    else targetSub = 'ledger';
   } else if (['validation', 'model', 'faq'].includes(id)) {
     targetTab = 'validation';
     if (id === 'faq') targetSub = 'faq';

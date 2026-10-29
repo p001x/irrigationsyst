@@ -651,10 +651,10 @@
           style="font-family:var(--mono); font-size:10px; color:var(--green); text-transform:uppercase; letter-spacing:0.1em; margin-right:10px;">
           <i class="fa-solid fa-sack-dollar"></i> Impact Hub:
         </span>
-        <button class="btn btn-mini active" id="sub-imp-roi" onclick="switchImpactSub('roi')"><i
-            class="fa-solid fa-chart-line"></i> Macroeconomic &amp; Yield Impact (SAS 2024)</button>
-        <button class="btn btn-mini" id="sub-imp-ledger" onclick="switchImpactSub('ledger')"><i
+        <button class="btn btn-mini active" id="sub-imp-ledger" onclick="switchImpactSub('ledger')"><i
             class="fa-solid fa-database"></i> NISR EICV7 Microdata Explorer (486 Households)</button>
+        <button class="btn btn-mini" id="sub-imp-roi" onclick="switchImpactSub('roi')"><i
+            class="fa-solid fa-chart-line"></i> Macroeconomic &amp; Yield Impact (SAS 2024)</button>
         <button class="btn btn-mini" id="sub-imp-export" onclick="switchImpactSub('export')"><i
             class="fa-solid fa-file-pdf"></i> Individual Advisory Certificate</button>
         <button class="btn btn-mini" id="sub-imp-sms" onclick="switchImpactSub('sms')"><i
@@ -662,7 +662,7 @@
       </div>
 
       <!-- SUB-VIEW 1: ECONOMIC ROI -->
-      <div id="imp-roi-view">
+      <div id="imp-roi-view" style="display:none;">
         <div class="card glass" style="margin-bottom:24px; border-left:4px solid var(--cyan); padding: 24px;">
           <div class="sec-label" style="color:var(--cyan); margin-bottom: 20px; font-size:12px;"><i
               class="fa-solid fa-code-branch"></i> The Solar-Economic Pipeline</div>
@@ -826,7 +826,7 @@
       </div>
 
       <!-- SUB-VIEW 2: NISR EICV7 MICRODATA EXPLORER -->
-      <div id="imp-ledger-view" style="display:none;">
+      <div id="imp-ledger-view">
         <div class="card glass">
           <div class="card-top ct-gold"></div>
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">

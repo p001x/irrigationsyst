@@ -18,7 +18,7 @@ export function renderExportHub() {
     return;
   }
   grid.innerHTML = '';
-  state.GLOBAL_MEMBERS.forEach(m => {
+  state.GLOBAL_MEMBERS.slice(0, 24).forEach(m => {
     const div = document.createElement('div');
     div.className = 'inner-glass';
     div.style.cssText = 'padding:20px;border-left:4px solid var(--cyan);';
@@ -158,7 +158,7 @@ export function renderAnalysisHub() {
   }
   Object.assign(grid.style, { gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' });
 
-  grid.innerHTML = filtered.map(m => {
+  grid.innerHTML = filtered.slice(0, 24).map(m => {
     const crop      = CROP_DATA[m.crop] || CROP_DATA.Maize;
     const sProf     = KIREHE_SECTORS.find(s => s.n === m.sector) || { fert: 1.0 };
     const mBaseWrsi = Math.min(100, Math.round(baseWRSI / crop.weight));
