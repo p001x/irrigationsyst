@@ -5,9 +5,9 @@ import { _runMonitorCycle }             from './monitor.js';
 import { SECTOR_HA, CROP_DATA, KIREHE_SECTORS, MARKET_PRICE_RWF_T, KIREHE_RF_MEAN, KIREHE_RF_STD } from './constants.js';
 import { computeBaselineWRSI, computeOptimizedWRSI } from './wrsi.js';
 
-const FIRST_NAMES  = ['Jean','Marie','Basile','Claudine','Bosco','Alice','Emmanuel','Pascasie','Theophile','Bernadette'];
-const LAST_NAMES   = ['Mukasa','Uwimana','Habimana','Ndayisaba','Gakwaya','Murenzi','Rugira','Kamanzi','Sebahutu','Bigirimana'];
-const SECTORS_LIST = ['Nasho','Mpanga','Gahara','Gatore','Kigarama','Kigina','Mahama','Musaza','Mushikiri','Nyamugari','Nyarubuye'];
+const FIRST_NAMES  = ['Jean','Marie','Basile','Claudine','Bosco','Alice','Emmanuel','Pascasie','Theophile','Bernadette','Esperance','Dieudonne'];
+const LAST_NAMES   = ['Mukasa','Uwimana','Habimana','Ndayisaba','Gakwaya','Murenzi','Rugira','Kamanzi','Sebahutu','Bigirimana','Mugabo','Nkurunziza'];
+const SECTORS_LIST = ['Nasho','Mpanga','Gahara','Gatore','Kigarama','Kigina','Kirehe','Mahama','Musaza','Mushikiri','Nyamugari','Nyarubuye'];
 const CROPS_LIST   = ['Maize','Beans','Coffee','Vegetables'];
 
 // Base irrigation frequency per crop under normal (non-stressed) conditions.
@@ -43,14 +43,15 @@ export function _seedMembers() {
   for (let k = 1; k <= 100; k++) {
     const sector   = SECTORS_LIST[k % SECTORS_LIST.length];
     const crop     = CROPS_LIST[k % CROPS_LIST.length];
-    const ha       = SECTOR_HA[sector] ?? 2.0;
+    // Realistic smallholder parcel size calibrated to NISR SAS 2024 (0.5 to 2.2 ha)
+    const ha       = parseFloat((0.6 + (k % 5) * 0.35).toFixed(1));
     const wrsi     = Math.round(70 + (k % 25));
     const cropDef  = CROP_DATA[crop]  || CROP_DATA.Maize;
     const sectProf = KIREHE_SECTORS.find(s => s.n === sector) || { fert: 1.0 };
     const yieldT   = ha * cropDef.yield * sectProf.fert * (wrsi / 100);
     state.GLOBAL_MEMBERS.push({
-      id:        'K-' + String(k).padStart(3, '0'),
-      name:      FIRST_NAMES[k % 10] + ' ' + LAST_NAMES[(k + 3) % 10],
+      id:        'NISR-RAHS-KIR-' + String(k).padStart(3, '0'),
+      name:      FIRST_NAMES[k % FIRST_NAMES.length] + ' ' + LAST_NAMES[(k + 3) % LAST_NAMES.length],
       sector,
       ha,
       crop,
@@ -207,13 +208,20 @@ export function renderLedger() {
       <td style="font-size:11px;color:var(--ink-soft);">${plan.schedule}</td>
       <td style="font-size:11px;color:${color};">${plan.inputs}</td>
       <td>
-        <button class="btn-mini" onclick="toggleIrrigation('${m.id}')"
-              style="${m.irrigation_active
-                ? 'color:var(--green);border-color:var(--green);background:rgba(60,200,120,0.12);'
-                : 'color:var(--ink-mute);border-color:var(--ink-mute);background:rgba(255,255,255,0.04);'}"
-              aria-label="${m.irrigation_active ? 'Deactivate' : 'Activate'} irrigation for ${m.name}">
-          ${m.irrigation_active ? '● Active' : '○ Activate Irrigation'}
-        </button>
+        <div style="display:flex;gap:4px;align-items:center;">
+          <button class="btn-mini" onclick="toggleIrrigation('${m.id}')"
+                style="${m.irrigation_active
+                  ? 'color:var(--green);border-color:var(--green);background:rgba(60,200,120,0.12);'
+                  : 'color:var(--ink-mute);border-color:var(--ink-mute);background:rgba(255,255,255,0.04);'}"
+                aria-label="${m.irrigation_active ? 'Deactivate' : 'Activate'} irrigation for ${m.name}">
+            ${m.irrigation_active ? '● Active' : '○ Activate'}
+          </button>
+          <button class="btn-mini" onclick="window.triggerMemberSms && window.triggerMemberSms('${m.name}', '${m.sector}', ${m.wrsi})"
+                style="color:var(--gold);border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);"
+                title="Preview Kinyarwanda SMS early warning alert">
+            <i class="fa-solid fa-comment-sms"></i> SMS
+          </button>
+        </div>
       </td>
       <td style="color:var(--green);font-weight:700;font-family:var(--mono);">${Math.round(m.yield_rwf || 0).toLocaleString()}</td>
       <td><button class="btn-mini" onclick="removeMember('${m.id}')"

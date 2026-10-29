@@ -7,6 +7,7 @@ import {
   tab, setTheme, showToast, hideToast, safeSet, safeHTML, safeStyle,
   update, renderShap, resetEmergency, checkSpectralGating,
   updateROI, updateSectorEconomy,
+  switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms, triggerMemberSms,
 } from './ui.js';
 import {
   fillLedger, renderLedger, addMember, removeMember, registerMember,
@@ -71,6 +72,7 @@ Object.assign(window, {
   tab, setTheme, showToast, hideToast, safeSet, safeHTML, safeStyle,
   update, renderShap, resetEmergency, checkSpectralGating,
   updateROI, updateSectorEconomy,
+  switchEarlySub, switchImpactSub, switchValSub, updateSmsPreview, simulateSmsDispatch, triggerMemberSms,
   // Members
   fillLedger, renderLedger, addMember, removeMember, registerMember,
   _seedMembers, _ensureMembers, getIrrigationPlan, toggleIrrigation,

@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "district": "Kirehe",
+    "province": "Eastern Province",
+    "country": "Rwanda",
+    "data_sources": [
+      "National Institute of Statistics of Rwanda (NISR) - Seasonal Agriculture Survey (SAS 2024)",
+      "NISR - Rwanda Agricultural Household Survey (RAHS 2024)",
+      "NISR - 5th Population and Housing Census (Census 2022)",
+      "Google Earth Engine (MODIS, CHIRPS, ERA5-Land, TerraClimate) Harmonized 500m Grid"
+    ],
+    "season": "Season B (March 1 - June 30)",
+    "target_crop_focus": ["Maize", "Beans", "Coffee", "Horticulture"]
+  },
+  "district_summary": {
+    "total_land_area_km2": 1184.85,
+    "census_2022_population": 460860,
+    "agricultural_households": 84120,
+    "irrigated_land_current_ha": 3480,
+    "nst2_irrigation_expansion_target_ha": 8500,
+    "benchmarks": {
+      "maize_rainfed_mean_yield_t_ha": 1.85,
+      "maize_irrigated_mean_yield_t_ha": 4.85,
+      "yield_protection_gain_pct": 162.1,
+      "mean_gross_margin_rwf_ha_rainfed": 420000,
+      "mean_gross_margin_rwf_ha_irrigated": 1280000
+    }
+  },
+  "sectors": [
+    {
+      "sector": "Nasho",
+      "census_pop_2022": 32840,
+      "agri_households": 5980,
+      "cultivated_ha": 5200,
+      "irrigated_ha": 1173,
+      "infrastructure": "Nasho Solar-Powered Center-Pivot Irrigation Project (63 Pivots, 3.3 MW Solar Plant, Lake Cyambwe intake)",
+      "drought_risk_class": "Moderate (Buffer Protected)",
+      "historical_drought_frequency_pct": 28.5,
+      "dominant_crops": ["Maize", "Soybean", "Beans"]
+    },
+    {
+      "sector": "Mahama",
+      "census_pop_2022": 61250,
+      "agri_households": 9450,
+      "cultivated_ha": 6800,
+      "irrigated_ha": 180,
+      "infrastructure": "Akagera River Border Pumping Station (Proposed expansion under NST2)",
+      "drought_risk_class": "Severe (High Vulnerability)",
+      "historical_drought_frequency_pct": 73.9,
+      "dominant_crops": ["Maize", "Sorghum", "Cassava", "Beans"]
+    },
+    {
+      "sector": "Mpanga",
+      "census_pop_2022": 44120,
+      "agri_households": 8100,
+      "cultivated_ha": 7100,
+      "irrigated_ha": 420,
+      "infrastructure": "Mpanga Irrigation Network & Lake Mpanga intake",
+      "drought_risk_class": "High Vulnerability",
+      "historical_drought_frequency_pct": 68.2,
+      "dominant_crops": ["Maize", "Beans", "Vegetables"]
+    },
+    {
+      "sector": "Gahara",
+      "census_pop_2022": 42890,
+      "agri_households": 7820,
+      "cultivated_ha": 5900,
+      "irrigated_ha": 110,
+      "infrastructure": "Rainwater harvesting dams & hillside micro-terraces",
+      "drought_risk_class": "High Vulnerability",
+      "historical_drought_frequency_pct": 58.7,
+      "dominant_crops": ["Maize", "Beans", "Banana"]
+    },
+    {
+      "sector": "Gatore",
+      "census_pop_2022": 38740,
+      "agri_households": 7120,
+      "cultivated_ha": 5400,
+      "irrigated_ha": 350,
+      "infrastructure": "Valley bottom gravity irrigation & cooperative storage hub",
+      "drought_risk_class": "Low-to-Moderate",
+      "historical_drought_frequency_pct": 21.7,
+      "dominant_crops": ["Maize", "Banana", "Horticulture"]
+    },
+    {
+      "sector": "Kigarama",
+      "census_pop_2022": 37620,
+      "agri_households": 6910,
+      "cultivated_ha": 4900,
+      "irrigated_ha": 190,
+      "infrastructure": "Marshland rehabilitation canals",
+      "drought_risk_class": "Moderate",
+      "historical_drought_frequency_pct": 34.8,
+      "dominant_crops": ["Maize", "Beans", "Coffee"]
+    },
+    {
+      "sector": "Kigina",
+      "census_pop_2022": 35410,
+      "agri_households": 6500,
+      "cultivated_ha": 4600,
+      "irrigated_ha": 230,
+      "infrastructure": "Akagera watershed feeder canals",
+      "drought_risk_class": "Moderate",
+      "historical_drought_frequency_pct": 39.1,
+      "dominant_crops": ["Maize", "Beans", "Cassava"]
+    },
+    {
+      "sector": "Kirehe",
+      "census_pop_2022": 39850,
+      "agri_households": 7250,
+      "cultivated_ha": 5100,
+      "irrigated_ha": 310,
+      "infrastructure": "District Agronomy Hub & Seed Multiplication Center",
+      "drought_risk_class": "Moderate",
+      "historical_drought_frequency_pct": 30.4,
+      "dominant_crops": ["Maize", "Vegetables", "Coffee"]
+    },
+    {
+      "sector": "Musaza",
+      "census_pop_2022": 36190,
+      "agri_households": 6640,
+      "cultivated_ha": 4800,
+      "irrigated_ha": 140,
+      "infrastructure": "Smallholder river lift pumps",
+      "drought_risk_class": "Moderate-to-High",
+      "historical_drought_frequency_pct": 47.8,
+      "dominant_crops": ["Maize", "Beans", "Banana"]
+    },
+    {
+      "sector": "Mushikiri",
+      "census_pop_2022": 33910,
+      "agri_households": 6210,
+      "cultivated_ha": 4500,
+      "irrigated_ha": 160,
+      "infrastructure": "Hillside catchment terraces & groundwater boreholes",
+      "drought_risk_class": "Moderate",
+      "historical_drought_frequency_pct": 41.3,
+      "dominant_crops": ["Maize", "Beans", "Coffee"]
+    },
+    {
+      "sector": "Nyamugari",
+      "census_pop_2022": 31440,
+      "agri_households": 5790,
+      "cultivated_ha": 4300,
+      "irrigated_ha": 120,
+      "infrastructure": "Valley wetland retention dams",
+      "drought_risk_class": "High Vulnerability",
+      "historical_drought_frequency_pct": 60.9,
+      "dominant_crops": ["Maize", "Beans", "Cassava"]
+    },
+    {
+      "sector": "Nyarubuye",
+      "census_pop_2022": 26690,
+      "agri_households": 4850,
+      "cultivated_ha": 3800,
+      "irrigated_ha": 80,
+      "infrastructure": "Akagera national park buffer retention",
+      "drought_risk_class": "High Vulnerability",
+      "historical_drought_frequency_pct": 65.2,
+      "dominant_crops": ["Maize", "Sorghum", "Beans"]
+    }
+  ]
+}

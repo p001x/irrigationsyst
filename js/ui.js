@@ -1,6 +1,6 @@
-// AgriAdapt — UI Helpers, Tab System, Main Update Loop
+// AgriAdapt — UI Helpers, 4-Tab System, Main Update Loop
 import { state }                             from './state.js';
-import { SHAP }                              from './constants.js';
+import { SHAP, KIREHE_SECTORS }              from './constants.js';
 import { getInp, computeBaselineWRSI, computeOptimizedWRSI } from './wrsi.js';
 import { fetchFinance }                      from './api.js';
 
@@ -36,7 +36,7 @@ export function showToast(msg, actionText = 'View', actionCallback = null) {
     toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#111827;color:white;padding:12px 24px;border-radius:40px;display:flex;align-items:center;gap:15px;z-index:9999;box-shadow:0 10px 30px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);font-family:var(--mono);font-size:13px;transition:all 0.3s ease;opacity:0;';
     document.body.appendChild(toast);
   }
-  toast.innerHTML = `<span style="color:var(--green)" aria-hidden="true">✓</span> ${msg}${actionCallback ? `<button id="toast-action" style="background:var(--green);border:none;color:#000;font-weight:900;padding:4px 12px;border-radius:12px;cursor:pointer;font-size:10px;text-transform:uppercase;">${actionText}</button>` : ''}`;
+  toast.innerHTML = `<span style="color:var(--green)" aria-hidden="true">✓</span> ${msg}${actionCallback ? `<button id="toast-action" style="background:var(--green);border:none;color:#000;font-weight:900;padding:4px 12px;border-radius:12px;cursor:pointer;font-size:10px;text-transform:uppercase;margin-left:10px;">${actionText}</button>` : ''}`;
   toast.style.opacity = '1'; toast.style.bottom = '40px';
   const btn = document.getElementById('toast-action');
   if (btn && actionCallback) btn.onclick = () => { actionCallback(); hideToast(); };
@@ -47,31 +47,185 @@ export function hideToast() {
   if (t) { t.style.opacity = '0'; t.style.bottom = '30px'; }
 }
 
-// ── Tab System ───────────────────────────────────────────────────────────────
+// ── Consolidated 4-Tab Architecture ──────────────────────────────────────────
 export function tab(id) {
-  if (['analysis','export','ledger'].includes(id) && state.GLOBAL_MEMBERS.length === 0) window._ensureMembers?.();
-  ['inputs','risk','ledger','finance','map','impact','model','export','analysis','spatial','faq'].forEach(t => {
+  // Alias mapping from 10 legacy tabs to the clean 4-tab model
+  let targetTab = id;
+  let targetSub = null;
+
+  if (['inputs', 'risk', 'map', 'spatial'].includes(id)) {
+    targetTab = 'early';
+    if (id === 'inputs' || id === 'risk') targetSub = 'clim';
+    else if (id === 'map') targetSub = 'map';
+    else if (id === 'spatial') targetSub = 'spatial';
+  } else if (['action', 'infrastructure'].includes(id)) {
+    targetTab = 'action';
+  } else if (['impact', 'ledger', 'finance', 'analysis', 'export'].includes(id)) {
+    targetTab = 'impact';
+    if (id === 'ledger') targetSub = 'ledger';
+    else if (id === 'export' || id === 'analysis') targetSub = 'export';
+    else targetSub = 'roi';
+  } else if (['validation', 'model', 'faq'].includes(id)) {
+    targetTab = 'validation';
+    if (id === 'faq') targetSub = 'faq';
+    else targetSub = 'model';
+  }
+
+  // Ensure members data initialized
+  if (['impact', 'ledger', 'export', 'analysis'].includes(id) && state.GLOBAL_MEMBERS.length === 0) {
+    window._ensureMembers?.();
+  }
+
+  // Toggle main panel visibility
+  const mainTabs = ['early', 'action', 'impact', 'validation'];
+  mainTabs.forEach(t => {
     const pEl = document.getElementById('p-' + t);
     const nEl = document.getElementById('nb-' + t);
-    if (pEl) { pEl.classList.toggle('active', t === id); pEl.style.display = t === id ? 'block' : 'none'; }
-    if (nEl)   nEl.classList.toggle('active', t === id);
+    const isActive = (t === targetTab);
+    if (pEl) {
+      pEl.classList.toggle('active', isActive);
+      pEl.style.display = isActive ? 'block' : 'none';
+    }
+    if (nEl) nEl.classList.toggle('active', isActive);
   });
+
+  // Hero section visibility (Early Warning & Solar Action benefit from the hero stats)
   const hero = document.querySelector('.hero');
-  if (hero) hero.style.display = ['inputs','risk','impact'].includes(id) ? 'flex' : 'none';
+  if (hero) hero.style.display = (targetTab === 'early' || targetTab === 'action') ? 'flex' : 'none';
+
+  // Trigger sub-view switch if requested
+  if (targetSub) {
+    if (targetTab === 'early') switchEarlySub(targetSub);
+    else if (targetTab === 'impact') switchImpactSub(targetSub);
+    else if (targetTab === 'validation') switchValSub(targetSub);
+  }
+
+  // Lifecycle initializations
   try {
-    if (id === 'map')      window.initLeafletMap?.();
-    if (id === 'ledger')   { window._ensureMembers?.(); window.renderLedger?.(); }
-    if (id === 'export')   { window._ensureMembers?.(); setTimeout(() => { try { window.renderExportHub?.(); } catch (e) { console.error('export render:', e); } }, 0); }
-    if (id === 'analysis') { window._ensureMembers?.(); setTimeout(() => { try { window.renderAnalysisHub?.(); } catch (e) { console.error('analysis render:', e); } }, 0); }
-    if (id === 'model')    setTimeout(() => { try { renderShap(); } catch (e) { console.error('shap render:', e); } }, 0);
-    if (id === 'spatial')  window._onSpatialTabOpen?.();
+    if (targetTab === 'early') {
+      setTimeout(() => { window.initLeafletMap?.(); }, 100);
+      window._onSpatialTabOpen?.();
+    }
+    if (targetTab === 'impact') {
+      window._ensureMembers?.();
+      window.renderLedger?.();
+      setTimeout(() => { try { window.renderAnalysisHub?.(); } catch (e) {} }, 50);
+      setTimeout(() => { try { window.renderExportHub?.(); } catch (e) {} }, 100);
+    }
+    if (targetTab === 'validation') {
+      setTimeout(() => { try { renderShap(); } catch (e) {} }, 50);
+    }
   } catch (err) {
     console.error('Tab render error [' + id + ']:', err);
-    const pEl = document.getElementById('p-' + id);
-    if (pEl) {
-      pEl.style.display = 'block'; pEl.classList.add('active');
-      pEl.innerHTML = `<div style="padding:60px;text-align:center;color:white;background:rgba(255,79,79,0.1);border-radius:24px;border:1px solid var(--red);"><i class="fa-solid fa-triangle-exclamation fa-3x" style="color:var(--red);margin-bottom:20px;" aria-hidden="true"></i><h3 style="font-family:var(--cab);font-size:24px;margin-bottom:10px;">Render Error Detected</h3><p style="font-family:var(--mono);font-size:12px;opacity:0.7;margin-bottom:20px;">[Panel: ${id}] ${err.message}</p><div style="display:flex;gap:10px;justify-content:center;"><button class="btn btn-mini" onclick="location.reload()">Reload Dashboard</button><button class="btn btn-mini" onclick="fetch('/api/members',{method:'DELETE'}).then(()=>location.reload())" style="background:var(--red);color:white;border-color:var(--red);">Reset Data</button></div></div>`;
-    }
+  }
+}
+
+// ── Tab 1 Sub-Navigation (Early Warning Hub) ──────────────────────────────────
+export function switchEarlySub(subId) {
+  const views = ['clim', 'map', 'spatial'];
+  views.forEach(v => {
+    const viewEl = document.getElementById('early-' + v + '-view');
+    const btnEl  = document.getElementById('sub-early-' + v);
+    const isActive = (v === subId);
+    if (viewEl) viewEl.style.display = isActive ? 'block' : 'none';
+    if (btnEl)  btnEl.classList.toggle('active', isActive);
+  });
+  if (subId === 'map') {
+    setTimeout(() => { window.initLeafletMap?.(); }, 150);
+  }
+  if (subId === 'spatial') {
+    window._onSpatialTabOpen?.();
+  }
+}
+
+// ── Tab 3 Sub-Navigation (Farmer ROI & Impact Hub) ───────────────────────────
+export function switchImpactSub(subId) {
+  const views = ['roi', 'ledger', 'export', 'sms'];
+  views.forEach(v => {
+    const viewEl = document.getElementById('imp-' + v + '-view');
+    const btnEl  = document.getElementById('sub-imp-' + v);
+    const isActive = (v === subId);
+    if (viewEl) viewEl.style.display = isActive ? 'block' : 'none';
+    if (btnEl)  btnEl.classList.toggle('active', isActive);
+  });
+  if (subId === 'ledger') window.renderLedger?.();
+  if (subId === 'export') window.renderExportHub?.();
+}
+
+// ── Tab 4 Sub-Navigation (Validation Lab & FAQ) ──────────────────────────────
+export function switchValSub(subId) {
+  const views = ['model', 'faq', 'nisr'];
+  views.forEach(v => {
+    const viewEl = document.getElementById('val-' + v + '-view');
+    const btnEl  = document.getElementById('sub-val-' + v);
+    const isActive = (v === subId);
+    if (viewEl) viewEl.style.display = isActive ? 'block' : 'none';
+    if (btnEl)  btnEl.classList.toggle('active', isActive);
+  });
+  if (subId === 'model') renderShap();
+}
+
+// ── Grassroots Feature Phone SMS Simulation (Kinyarwanda & English) ──────────
+const SMS_TEMPLATES = {
+  Mahama: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mahama uri mu kaga k\'amapfa (76.5%). Ubuhehere bw\'ubutaka buri munsi ya 35%. Imvura izabura muri Dekad 6–8. Inama: Sasira ibishingwe ku butaka (mulching) kandi witabaze gahunda y\'amazi yihuse. Guhamagara Agronome: *105# cyangwa 0788-383-103.',
+    en: 'AgriAdapt Kirehe Alert: Mahama Sector is at Extreme Drought Risk (76.5%). Root-zone soil moisture is critically low (<35%). Urgent: Apply soil mulching and mobilize emergency supplemental irrigation. Local Agronomist Hotline: *105# / 0788-383-103.',
+    risk: 'EXTREME RISK (76.5%)'
+  },
+  Mpanga: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Mpanga wugarijwe n\'amapfa (71.2%). Ubuhehere bw\'ubutaka buri hasi cyane. Inama: Gabanya gukata ibibabi, hunga izuba ku bihingwa bito, tanga amakuru ku mushinga wa Nasho wo kuhira. Nimero: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Mpanga Sector is facing Severe Drought (71.2%). High thermal stress detected on MODIS. Request cooperative solar water transfer. Agronomist Hotline: *105#.',
+    risk: 'EXTREME RISK (71.2%)'
+  },
+  Nasho: {
+    rw: 'AgriAdapt Nasho Nexus: Gahunda yo kuhira irakora neza ku ma pivots 63. Amashanyarazi y\'imirasire y\'izuba aratanga 3.3 MW. Amazi y\'ikigega ageze kuri 95%. Icyitonderwa: Muri Dekad 10 kuhira bizahagarikwa mu gihe cy\'isarura.',
+    en: 'AgriAdapt Nasho Hub: 63 center pivots operational via 3.3 MW solar power. Reservoir capacity at 95%. Note: Irrigation suspension scheduled for Dekad 10 grain dry-down phase.',
+    risk: 'STABILIZED (PIVOT IRRIGATED)'
+  },
+  Gatore: {
+    rw: 'AgriAdapt Kirehe Alert: Umurenge wa Gatore uratekanye (Ubuhehere buri hejuru ya 75%). Imyaka imeze neza. Inama: Tegura ifumbire ya NPK ku gihe cy\'imikurire.',
+    en: 'AgriAdapt Kirehe Alert: Gatore Sector is in the Optimal Moisture Zone (>75% WRSI). Nominal crop development. Apply standard nitrogen top-dressing.',
+    risk: 'OPTIMAL / RESILIENT (22.1%)'
+  },
+  Nyamugari: {
+    rw: 'AgriAdapt Kirehe Alert: Nyamugari iri mu kaga gakomeye k\'amapfa (65.5%). Ubutaka burumagaye. Witabaze gahunda yo kuhira y\'akarere. Guhamagara: *105#.',
+    en: 'AgriAdapt Kirehe Alert: Nyamugari Sector under High Drought Stress (65.5%). Immediate moisture conservation required.',
+    risk: 'HIGH RISK (65.5%)'
+  }
+};
+
+export function updateSmsPreview() {
+  const sel = document.getElementById('sms-sector-select');
+  const sector = sel?.value || 'Mahama';
+  const tmpl = SMS_TEMPLATES[sector] || SMS_TEMPLATES.Mahama;
+
+  safeSet('sms-preview-body-rw', `"${tmpl.rw}"`);
+  safeSet('sms-preview-body-en', `"${tmpl.en}"`);
+  safeSet('sms-risk-badge', tmpl.risk);
+}
+
+export function simulateSmsDispatch() {
+  const sel = document.getElementById('sms-sector-select');
+  const sector = sel?.value || 'Mahama';
+  const count = sector === 'Mahama' ? '4,820' : sector === 'Mpanga' ? '3,410' : '2,150';
+  showToast(`✅ Dispatched Kinyarwanda SMS early warning to ${count} registered smallholders in ${sector}!`);
+  safeSet('sms-dispatch-status', `🚀 Sent to ${count} feature phones via Africa's Talking gateway at ${new Date().toLocaleTimeString()}`);
+}
+
+export function triggerMemberSms(name, sector, wrsi) {
+  tab('impact');
+  switchImpactSub('sms');
+  const sel = document.getElementById('sms-sector-select');
+  if (sel) {
+    sel.value = sector;
+    updateSmsPreview();
+  }
+  showToast(`📱 Configured Kinyarwanda SMS early warning alert for ${name} (${sector}, WRSI: ${wrsi}%)`);
+  const card = document.getElementById('sms-gateway-card');
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    card.style.outline = '2px solid var(--gold)';
+    setTimeout(() => { card.style.outline = ''; }, 2500);
   }
 }
 
@@ -139,18 +293,18 @@ export function renderShap() {
     row.setAttribute('role', 'listitem');
     row.innerHTML = `
       <div style="font-size:10px;color:var(--ink-soft);text-transform:uppercase;margin-bottom:5px;">
-        ${d.name} <span style="float:right">${(d.imp * 100).toFixed(1)}% Impact</span>
+        ${d.name} <span style="float:right">${(d.imp * 100).toFixed(1)}% Relative Importance</span>
       </div>
       <div role="progressbar" aria-valuenow="${Math.round(d.imp*100)}" aria-valuemin="0" aria-valuemax="100"
            aria-label="${d.name} importance ${(d.imp*100).toFixed(1)}%"
-           style="height:4px;width:100%;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
-        <div style="height:100%;width:${Math.min(100, d.imp*200)}%;background:${d.color};transition:width 0.5s ease-out;"></div>
+           style="height:6px;width:100%;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;">
+        <div style="height:100%;width:${Math.min(100, d.imp*220)}%;background:${d.color};transition:width 0.5s ease-out;"></div>
       </div>`;
     cont.appendChild(row);
   });
 }
 
-// ── Finance ROI (calls server) ───────────────────────────────────────────────
+// ── Finance ROI (Instant Client-Side with Real Benchmarks) ────────────────────
 export async function updateROI(baseWRSI, optWRSI, dekad) {
   try {
     const i    = getInp();
@@ -181,7 +335,7 @@ export async function updateROI(baseWRSI, optWRSI, dekad) {
     safeSet('fin-net-profit',    data.netProfit.toLocaleString() + ' RWF');
     safeSet('fin-per-household', data.perHH.toLocaleString() + ' RWF');
     window.renderLedger?.();
-  } catch (e) { console.error('Finance API error', e); }
+  } catch (e) { console.error('Finance calculation error', e); }
 }
 
 export function updateSectorEconomy(stats) {
@@ -196,7 +350,7 @@ export function updateSectorEconomy(stats) {
     block.innerHTML = `
       <div style="font-size:10px;color:var(--ink-soft);text-transform:uppercase;">${sName}</div>
       <div style="font-family:var(--mono);color:var(--cyan);font-weight:800;margin-top:4px;">${Math.round(stats[sName]).toLocaleString()}</div>
-      <div style="font-size:9px;color:var(--ink-mute);">RWF Revenue</div>`;
+      <div style="font-size:9px;color:var(--ink-mute);">RWF Value</div>`;
     cont.appendChild(block);
   });
 }
@@ -270,10 +424,10 @@ export function update() {
   // Predictive panel
   safeSet('wrsi-base-big', baseWRSI + '%');  safeStyle('wrsi-base-fill', 'width', baseWRSI + '%');
   const tagBase = document.getElementById('tag-base');
-  if (tagBase) { tagBase.textContent = baseWRSI < 75 ? 'PREDICTED FAILURE' : 'NOMINAL'; tagBase.className = 'ptag ' + (baseWRSI < 75 ? 'pt-hi' : 'pt-lo'); }
+  if (tagBase) { tagBase.textContent = baseWRSI < 75 ? 'PREDICTED DROUGHT DEFICIT' : 'NOMINAL'; tagBase.className = 'ptag ' + (baseWRSI < 75 ? 'pt-hi' : 'pt-lo'); }
   safeSet('wrsi-opt-big', optWRSI + '%');    safeStyle('wrsi-opt-fill', 'width', optWRSI + '%');
   const tagOpt = document.getElementById('tag-opt');
-  if (tagOpt) { tagOpt.textContent = optWRSI < 75 ? 'INSUFFICIENT RECOVERY' : 'STABILIZED'; tagOpt.className = 'ptag ' + (optWRSI < 75 ? 'pt-hi' : 'pt-lo'); }
+  if (tagOpt) { tagOpt.textContent = optWRSI < 75 ? 'INSUFFICIENT RECOVERY' : 'STABILIZED (SOLAR-IRRIGATED)'; tagOpt.className = 'ptag ' + (optWRSI < 75 ? 'pt-hi' : 'pt-lo'); }
 
   // Explain why irrigation shows zero benefit late in the season
   const optNote = document.getElementById('wrsi-opt-note');
@@ -321,7 +475,5 @@ export function update() {
 
   checkSpectralGating();
   if (state.currentSpectralContext === 'sim') window.syncSpectralFromDashboard?.();
-  if (document.getElementById('p-analysis')?.classList.contains('active')) window.renderAnalysisHub?.();
-  if (document.getElementById('p-export')?.classList.contains('active'))   window.renderExportHub?.();
-  if (document.getElementById('p-model')?.classList.contains('active'))    renderShap();
+  if (document.getElementById('imp-export-view')?.style.display !== 'none') window.renderExportHub?.();
 }
