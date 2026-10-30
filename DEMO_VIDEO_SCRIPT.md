@@ -52,14 +52,14 @@ TOTAL DURATION: 2 Minutes 45 Seconds (15-second buffer under the 3-minute hard c
 * **Visual Action:**
   1. *[0:55]* On Tab 1, click on **Mpanga Sector** in the ranking list to highlight its 68% risk score and population stats.
   2. *[1:10]* Switch to Tab 2 (`Last-Mile Action`). Show the **USSD/SMS Gateway Simulator card**. Click the button **"Ohereza Ubutumwa (Send SMS)"** to trigger the live phone alert animation.
-  3. *[1:25]* Switch to Tab 3 (`Infrastructure Hub`). Show the **Nasho 63-pivot monitoring ledger** and click an **"SMS"** action button beside a farmer's plot in the member table.
+  3. *[1:25]* Switch to Tab 3 (`Farmer ROI & Impact Hub`). Show the **NISR EICV7 Microdata Query Explorer** with 486 surveyed smallholder households across 54 enumeration clusters, demonstrating multi-variable filters and clicking **"Irrigate"** and **"SMS"** action buttons.
 
 > **Spoken Narration (Voiceover):**  
 > *"Our user interface is designed for real-world decision-makers across four streamlined tabs.  
 > On our **Early Warning Hub**, local agronomists immediately see high-vulnerability corridors: Mahama, Mpanga, and Nyarubuye face over 60% mid-season moisture stress.  
 > But an early warning is useless without last-mile action.  
 > In our **Last-Mile Action Hub**, AgriAdapt simulates two-way USSD and SMS dispatches via phone code *712#. Non-smartphone smallholders receive localized actionable guidance in Kinyarwanda — prescribing mulching, water rationing, and drought-tolerant seed management 45 days in advance.  
-> And in our **Infrastructure Hub**, cooperative managers monitor all 63 solar-powered center pivots at the Nasho Irrigation Scheme, scheduling water quotas with precision."*
+> And in our **Farmer ROI & Impact Hub**, we ingested raw NISR EICV7 microdata covering 486 surveyed households across 54 enumeration clusters, enabling agronomists to query water shortages and trigger precision solar-pivot irrigation."*
 
 ---
 
