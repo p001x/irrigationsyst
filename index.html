@@ -61,7 +61,7 @@
           Black</button>
       </div>
       <button class="btn btn-mini" id="btn-low-bandwidth" onclick="toggleLowBandwidth()" title="Toggle background video for low bandwidth" style="font-family:var(--mono);font-size:10px;padding:6px 12px;"><i class="fa-solid fa-leaf"></i> Data Saver</button>
-      <button class="btn btn-mini" id="btn-low-bandwidth" onclick="toggleLowBandwidth()" title="Toggle background video for low bandwidth" style="font-family:var(--mono);font-size:10px;padding:6px 12px;"><i class="fa-solid fa-leaf"></i> Data Saver</button>
+      <button class="btn btn-mini" onclick="document.getElementById('demo-video-modal').style.display='flex'" style="background:rgba(0,240,255,0.12);border-color:var(--cyan);color:var(--cyan);font-family:var(--mono);font-size:10px;padding:6px 12px;font-weight:700;" title="Watch full screen recording demonstration (NISR Slide 12)"><i class="fa-solid fa-circle-play"></i> Watch Demo Video</button>
       <!-- Live Monitor Badge in topbar-right -->
       <div id="monitor-badge" style="
       display:flex; align-items:center; gap:8px;
@@ -1232,6 +1232,49 @@
               </div>
             </div>
 
+            <!-- VIDEO DEMONSTRATION SHOWCASE (NISR Slide 12 Deliverable #3) -->
+            <div class="card glass" style="margin-top:20px; padding:24px; border-left:4px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+                <div class="sec-label" style="color:var(--gold); margin:0;">
+                  <i class="fa-solid fa-video"></i> NISR Slide 12 Screen Recording Demonstration
+                </div>
+                <span class="ptag pt-ok" style="font-family:var(--mono); font-size:10px;">
+                  <i class="fa-solid fa-check-circle"></i> Slide 12 Compliant (&lt; 3 Min)
+                </span>
+              </div>
+              <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+                Walkthrough of the 4-tab decision-support system, multi-sensor leave-one-year-out ML verification, TreeSHAP feature attribution, and Kirehe 486-household microdata explorer. Prepared following the official presentation script (<a href="DEMO_VIDEO_SCRIPT.md" target="_blank" style="color:var(--cyan);">DEMO_VIDEO_SCRIPT.md</a>, 2:45 min).
+              </p>
+              
+              <div style="background:#000; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); margin-bottom:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                <video controls autoplay loop muted playsinline style="width:100%; display:block; max-height:480px; object-fit:contain;">
+                  <source src="demo/demo.mp4" type="video/mp4">
+                  <source src="demo/demo.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div style="font-size:11px; color:var(--ink-mute);">
+                  <strong>Formats Available:</strong> WebM (Slide 12 standard), MP4, Animated WebP, and Full-Res GIF
+                </div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                  <a href="demo/demo.webm" download="demo.webm" class="btn btn-mini" style="background:rgba(0,240,255,0.1); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:6px 12px; font-weight:700;">
+                    <i class="fa-solid fa-file-video"></i> Download WebM
+                  </a>
+                  <a href="demo/demo.mp4" download="demo.mp4" class="btn btn-mini" style="background:rgba(0,255,102,0.1); border-color:var(--green); color:var(--green); text-decoration:none; padding:6px 12px; font-weight:700;">
+                    <i class="fa-solid fa-file-video"></i> Download MP4
+                  </a>
+                  <a href="demo/demo.gif" download="demo.gif" class="btn btn-mini" style="background:rgba(251,191,36,0.1); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:6px 12px; font-weight:700;">
+                    <i class="fa-solid fa-file-image"></i> Download GIF
+                  </a>
+                  <a href="DEMO_VIDEO_SCRIPT.md" target="_blank" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:6px 12px;">
+                    <i class="fa-solid fa-file-lines"></i> 2:45 Script
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <!-- DIRECT DATASET ACCESS & DOWNLOAD CENTER (Slide 12 Compliance) -->
             <div class="card glass" style="margin-top:20px; padding:22px; border-left:4px solid var(--cyan);">
               <div class="sec-label" style="color:var(--cyan); margin-bottom:10px;">
@@ -1397,6 +1440,49 @@
       Evaluation · Calibrated with NISR Official Microdata (SAS 2024, Census 2022) · Aligned with Rwanda NST2 &amp;
       Vision 2050
     </footer>
+
+    <!-- VIDEO DEMONSTRATION FULL-SCREEN MODAL (Slide 12 Deliverable #3) -->
+    <div id="demo-video-modal" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(10,14,24,0.94); backdrop-filter:blur(10px); align-items:center; justify-content:center; padding:20px;">
+      <div class="card glass" style="max-width:1050px; width:100%; max-height:94vh; overflow-y:auto; border:1px solid var(--cyan); box-shadow:0 25px 70px rgba(0,240,255,0.3); position:relative; padding:28px;">
+        <button onclick="document.getElementById('demo-video-modal').style.display='none'" style="position:absolute; top:18px; right:20px; background:none; border:none; color:var(--ink-mute); font-size:26px; cursor:pointer;" title="Close video">&times;</button>
+        <div class="sec-label" style="color:var(--cyan); margin-bottom:12px; font-size:15px;">
+          <i class="fa-solid fa-circle-play"></i> AgriAdapt Live Platform Demonstration (NISR Slide 12)
+        </div>
+        <p style="font-size:12px; color:var(--ink-soft); margin-bottom:18px; line-height:1.6;">
+          Screen recording walkthrough demonstrating the 4-tab decision-support system, multi-sensor LOYO-CV ML verification, 500m satellite raster mapping, and 486-household NISR EICV7 microdata explorer.
+        </p>
+        
+        <!-- Video Player -->
+        <div style="background:#000; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.15); margin-bottom:18px; box-shadow:0 12px 35px rgba(0,0,0,0.6);">
+          <video controls autoplay loop muted playsinline style="width:100%; display:block; max-height:560px; object-fit:contain;">
+            <source src="demo/demo.mp4" type="video/mp4">
+            <source src="demo/demo.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Video Controls & Download Actions -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:12px; border-top:1px solid var(--border);">
+          <div style="font-size:11px; color:var(--ink-mute);">
+            <i class="fa-solid fa-clock"></i> Duration: Compliant with NISR &lt; 3 min ceiling · Resolution: 1554 &times; 849 HD
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="demo/demo.webm" download="demo.webm" class="btn btn-mini" style="background:rgba(0,240,255,0.1); border-color:var(--cyan); color:var(--cyan); text-decoration:none; padding:7px 14px; font-weight:700;">
+              <i class="fa-solid fa-download"></i> WebM (Slide 12)
+            </a>
+            <a href="demo/demo.mp4" download="demo.mp4" class="btn btn-mini" style="background:rgba(0,255,102,0.1); border-color:var(--green); color:var(--green); text-decoration:none; padding:7px 14px; font-weight:700;">
+              <i class="fa-solid fa-download"></i> MP4 Video
+            </a>
+            <a href="demo/demo.gif" download="demo.gif" class="btn btn-mini" style="background:rgba(251,191,36,0.1); border-color:var(--gold); color:var(--gold); text-decoration:none; padding:7px 14px; font-weight:700;">
+              <i class="fa-solid fa-download"></i> Animated GIF
+            </a>
+            <a href="DEMO_VIDEO_SCRIPT.md" target="_blank" class="btn btn-mini" style="background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--ink); text-decoration:none; padding:7px 14px;">
+              <i class="fa-solid fa-file-lines"></i> 2:45 Script
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="js/main.js"></script>
 </body>

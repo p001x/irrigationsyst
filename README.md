@@ -220,10 +220,20 @@ The platform is designed to serve both high-level district agronomists and grass
 * **Low-Bandwidth Mode:** Topbar `[⚡ Data Saver]` toggle pausing heavy video backgrounds for field officers in low-connectivity areas.
 
 ### 5.5 Visual Demonstration Walkthrough (NISR Slide 12 Requirement)
-* **Demo Video File:** [`demo/demo.gif`](./demo/demo.gif) (and [`demo/demo.webp`](./demo/demo.webp))
-* **Presentation Script:** [`DEMO_VIDEO_SCRIPT.md`](./DEMO_VIDEO_SCRIPT.md) — 2 minutes 45 seconds walkthrough strictly adhering to the under-3-minute limitation specified in Slide 12.
+In strict compliance with **Slide 12 (Deliverable #3: Video file under 3 minutes)** and **Slide 20** of the NISR Hackathon guidelines, the platform walkthrough demonstration is provided in multiple formats:
 
-![AgriAdapt Screen Recording Demonstration](./demo/demo.gif)
+* **High-Definition WebM Video (Slide 12 & 20 Standard):** [`demo/demo.webm`](./demo/demo.webm)
+* **Universal MP4 Video (Direct Browser Playback):** [`demo/demo.mp4`](./demo/demo.mp4)
+* **Lightweight Animated WebP (1.8 MB):** [`demo/demo.webp`](./demo/demo.webp)
+* **Animated GIF (Full Resolution):** [`demo/demo.gif`](./demo/demo.gif)
+* **Presentation Voiceover Script:** [`DEMO_VIDEO_SCRIPT.md`](./DEMO_VIDEO_SCRIPT.md) — 2 minutes 45 seconds walkthrough strictly adhering to the under-3-minute limitation specified in Slide 12.
+
+<div align="center">
+  <a href="./demo/demo.mp4">
+    <img src="./demo/demo.gif" alt="AgriAdapt Screen Recording Demonstration" width="100%" style="max-width:980px; border-radius:12px; border:1px solid #00f0ff; box-shadow: 0 10px 40px rgba(0,240,255,0.25);" />
+  </a>
+  <p><em>Click on the preview above or <a href="./demo/demo.mp4">open demo/demo.mp4</a> / <a href="./demo/demo.webm">demo/demo.webm</a> to watch the full-screen demonstration.</em></p>
+</div>
 
 ---
 
@@ -329,10 +339,15 @@ python run_pipeline.py
 ```
 irrigationsyst/
 ├── data/
-│   ├── kirehe_district_real_boundary.geojson  # Exact official outer boundary of Kirehe (1,184.85 km2)
-│   ├── nisr_kirehe_sector_baselines.json      # Official SAS 2024, RAHS 2024, Census 2022 metrics
-│   └── kirehe_dataset_500m_sample.csv         # Harmonized multi-sensor dataset (24 indicators)
+│   ├── kirehe_eicv7_household_microdata_sample.csv  # Raw NISR EICV7 survey microdata (486 surveyed households)
+│   ├── nisr_eicv7_kirehe_all_households.json        # Complete EICV7 survey records (54 enumeration clusters)
+│   ├── nisr_eicv7_kirehe_microdata.json             # District EICV7 indicators (79% basic phones, 49.8% water deficit)
+│   ├── kirehe_district_real_boundary.geojson        # Exact official outer boundary of Kirehe (1,184.85 km2)
+│   ├── nisr_kirehe_sector_baselines.json            # Official SAS 2024, RAHS 2024, Census 2022 metrics
+│   └── kirehe_dataset_500m_sample.csv               # Harmonized multi-sensor dataset (24 indicators)
 ├── demo/
+│   ├── demo.webm                              # High-definition WebM video (Slide 12 & 20 standard)
+│   ├── demo.mp4                               # Universal MP4 video (browser-ready)
 │   ├── demo.gif                               # Screen recording demonstration (under 3 min, Slide 12)
 │   └── demo.webp                              # Animated webp format
 ├── js/
