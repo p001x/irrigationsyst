@@ -959,3 +959,92 @@ input[type="range"]::-webkit-slider-runnable-track {
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important;
 }
 
+/* ─── MOBILE PHONE OPTIMIZATION & RESPONSIVE SCALING ─── */
+@media screen and (max-width: 768px) {
+  html { font-size: 14px; }
+  
+  .topbar {
+    padding: 10px 14px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .logo-text { font-size: 18px; }
+  .logo-sub { display: none; }
+  
+  .nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    padding: 0 10px;
+    gap: 4px;
+  }
+  .ntab {
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+  
+  .hero {
+    padding: 36px 16px;
+  }
+  .hero-h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  
+  .card {
+    padding: 18px 14px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .g2, .g3, .g4, .grid-2, .grid-3, .grid-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .sl-row {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+  .sl-name {
+    grid-column: 1 / -1;
+    font-size: 12px;
+  }
+  
+  /* Tables & Ledger mobile horizontal scrolling */
+  .table-responsive, .ledger-container, .table-container, table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Map container touch sizing */
+  #map, .map-container, .leaflet-container {
+    min-height: 340px !important;
+    max-height: 60vh !important;
+    touch-action: pan-x pan-y !important;
+  }
+
+  /* Modals full width on mobile */
+  .modal-content, #demo-video-modal > div {
+    width: 95% !important;
+    max-width: 95% !important;
+    padding: 16px !important;
+    margin: 10px auto !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-h1 { font-size: 26px; }
+  .topbar { justify-content: center; text-align: center; }
+  .ntab { padding: 10px 10px; font-size: 10px; }
+  .sub-pill { font-size: 10px !important; padding: 4px 10px !important; }
+}
+
+
